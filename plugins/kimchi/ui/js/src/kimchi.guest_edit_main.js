@@ -314,7 +314,7 @@ kimchi.guest_edit_main = function() {
         };
         //set up for PAM
         var userNodes = {}, groupNodes = {};
-        authType = wok.capabilities['auth']
+        authType = kimchi.capabilities['auth']
         if (authType == 'pam') {
             $("#form-guest-edit-permission .ldap").hide();
             kimchi.retrieveVM(kimchi.selectedGuest, function(vm){
@@ -432,7 +432,7 @@ kimchi.guest_edit_main = function() {
     var setupPCIDevice = function(){
         kimchi.getHostPCIDevices(function(hostPCIs){
             kimchi.getVMPCIDevices(kimchi.selectedGuest, function(vmPCIs){
-                var pciEnabled = wok.capabilities.kernel_vfio;
+                var pciEnabled = kimchi.capabilities.kernel_vfio;
                 for(var i=0; i<hostPCIs.length; i++){
                     var itemNode = $.parseHTML(wok.substitute($('#pci-tmpl').html(),{
                         name: hostPCIs[i].name,
@@ -708,7 +708,7 @@ kimchi.guest_edit_main = function() {
 
     var permissionSubmit = function(event) {
         var content = { users: [], groups: [] };
-        authType = wok.capabilities['auth']
+        authType = kimchi.capabilities['auth']
         if (authType == 'pam') {
             $("#permission-sel-users").children().each(function(){
                 content.users.push($("label", this).text());
