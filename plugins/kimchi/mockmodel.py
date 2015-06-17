@@ -22,16 +22,18 @@ import lxml.etree as ET
 import os
 import random
 import time
-
-from model import cpuinfo
-
 from lxml import objectify
 from lxml.builder import E
+
+from wok.exception import NotFoundError, OperationFailed
+from wok.objectstore import ObjectStore
+from wok.utils import add_task, get_next_clone_name, wok_log
+from wok.xmlutils.utils import xml_item_update
 
 import config
 import imageinfo
 import osinfo
-from wok.exception import NotFoundError, OperationFailed
+from model import cpuinfo
 from model.debugreports import DebugReportsModel
 from model.host import DeviceModel
 from model.libvirtstoragepool import IscsiPoolDef, NetfsPoolDef
@@ -42,10 +44,7 @@ from model.storagevolumes import StorageVolumeModel, StorageVolumesModel
 from model.templates import LibvirtVMTemplate
 from model.users import PAMUsersModel
 from model.groups import PAMGroupsModel
-from wok.objectstore import ObjectStore
-from wok.utils import add_task, get_next_clone_name, wok_log
 from vmtemplate import VMTemplate
-from wok.xmlutils.utils import xml_item_update
 
 
 fake_user = {'root': 'letmein!'}
