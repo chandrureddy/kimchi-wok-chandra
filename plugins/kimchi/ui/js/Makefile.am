@@ -17,7 +17,7 @@
 
 EXTRA_DIST = src widgets
 
-jsdir = $(datadir)/kimchi/ui/js
+jsdir = $(datadir)/wok/plugins/kimchi/ui/js
 
 dist_js_DATA = kimchi.min.js $(filter-out kimchi.min.js, $(wildcard *.js))
 
