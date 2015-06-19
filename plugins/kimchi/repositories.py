@@ -24,12 +24,12 @@ import urlparse
 
 from ConfigParser import ConfigParser
 
-from kimchi.basemodel import Singleton
-from kimchi.config import kimchiLock
-from kimchi.exception import InvalidOperation, InvalidParameter
-from kimchi.exception import OperationFailed, NotFoundError, MissingParameter
-from kimchi.utils import validate_repo_url
-from kimchi.yumparser import get_yum_repositories, write_repo_to_file
+from wok.basemodel import Singleton
+from config import kimchiLock
+from wok.exception import InvalidOperation, InvalidParameter
+from wok.exception import OperationFailed, NotFoundError, MissingParameter
+from wok.utils import validate_repo_url
+from yumparser import get_yum_repositories, write_repo_to_file
 
 
 class Repositories(object):

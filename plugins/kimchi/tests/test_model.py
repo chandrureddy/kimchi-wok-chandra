@@ -29,18 +29,18 @@ import uuid
 
 
 import iso_gen
-import kimchi.objectstore
+import wok.objectstore
 import utils
-from kimchi import netinfo
-from kimchi.basemodel import Singleton
-from kimchi.config import config
-from kimchi.exception import InvalidOperation
-from kimchi.exception import InvalidParameter, NotFoundError, OperationFailed
-from kimchi.osinfo import get_template_default
-from kimchi.model import model
-from kimchi.model.libvirtconnection import LibvirtConnection
-from kimchi.rollbackcontext import RollbackContext
-from kimchi.utils import add_task
+from wok import netinfo
+from wok.basemodel import Singleton
+from wok.config import config
+from wok.exception import InvalidOperation
+from wok.exception import InvalidParameter, NotFoundError, OperationFailed
+from wok.plugins.kimchi.osinfo import get_template_default
+from wok.plugins.kimchi.model import model
+from wok.plugins.kimchi.model.libvirtconnection import LibvirtConnection
+from wok.rollbackcontext import RollbackContext
+from wok.utils import add_task
 
 
 invalid_repository_urls = ['www.fedora.org',       # missing protocol
@@ -1217,7 +1217,7 @@ class BaseModelTests(unittest.TestCase):
         def get_list(self):
             return list(self.data)
 
-    class TestModel(kimchi.basemodel.BaseModel):
+    class TestModel(wok.basemodel.BaseModel):
         def __init__(self):
             foo = BaseModelTests.FoosModel()
             super(BaseModelTests.TestModel, self).__init__([foo])
