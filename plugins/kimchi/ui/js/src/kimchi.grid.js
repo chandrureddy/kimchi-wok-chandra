@@ -376,7 +376,7 @@ kimchi.widget.Grid.prototype = (function() {
         var container = $('#' + containerID);
         var gridID = this['opts']['id'];
         var rowSelection = this['opts']['rowSelection'] || 'single';
-        var domNode = $(kimchi.substitute(htmlStr, {
+        var domNode = $(wok.substitute(htmlStr, {
             id: gridID,
             loading: i18n['KCHGRD6001M'],
             message: i18n['KCHGRD6002M'],

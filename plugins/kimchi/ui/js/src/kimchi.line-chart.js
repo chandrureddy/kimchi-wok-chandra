@@ -109,7 +109,7 @@ kimchi.widget.LineChart = function(params) {
 
         var maxValueLabel = i18n['KCHHOST6001M'] + ' ' +
             (type === 'value'
-                ? kimchi.formatMeasurement(maxValue, formatSettings)
+                ? wok.formatMeasurement(maxValue, formatSettings)
                 : '100%');
         if(!chartVAxis) {
             chartVAxis = $('<div class="chart-vaxis-container">' +
@@ -182,7 +182,7 @@ kimchi.widget.LineChart = function(params) {
             var latestPoint = data[i]['points'].slice(-1).pop();
             var latestValue = latestPoint['y'];
             if(type === 'value') {
-                latestValue = kimchi.formatMeasurement(
+                latestValue = wok.formatMeasurement(
                     latestValue,
                     formatSettings
                 );

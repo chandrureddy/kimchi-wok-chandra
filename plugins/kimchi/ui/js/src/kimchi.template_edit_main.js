@@ -49,11 +49,11 @@ kimchi.template_edit_main = function() {
         $('#template-edit-graphics').append('<option>Spice</option>');
         kimchi.select('template-edit-graphics-list', vncOpt);
         var enableSpice = function() {
-            if (kimchi.capabilities == undefined) {
+            if (wok.capabilities == undefined) {
                 setTimeout(enableSpice, 2000);
                 return;
             }
-            if (kimchi.capabilities.qemu_spice == true) {
+            if (wok.capabilities.qemu_spice == true) {
                 spiceOpt = [{label: 'Spice', value: 'spice'}]
                 kimchi.select('template-edit-graphics-list', spiceOpt);
             }
@@ -63,7 +63,7 @@ kimchi.template_edit_main = function() {
             var scsipools = {};
             var addStorageItem = function(storageData) {
                 var thisName = storageData.storageName;
-                var nodeStorage = $.parseHTML(kimchi.substitute($('#template-storage-pool-tmpl').html(), storageData));
+                var nodeStorage = $.parseHTML(wok.substitute($('#template-storage-pool-tmpl').html(), storageData));
                 $('.template-tab-body', '#form-template-storage').append(nodeStorage);
                 var storageOptions = '';
                 var scsiOptions = '';
@@ -185,7 +185,7 @@ kimchi.template_edit_main = function() {
             var networkItemNum = 0;
             var addInterfaceItem = function(networkData) {
                 var networkName = networkData.networkV;
-                var nodeInterface = $.parseHTML(kimchi.substitute($('#template-interface-tmpl').html(), networkData));
+                var nodeInterface = $.parseHTML(wok.substitute($('#template-interface-tmpl').html(), networkData));
                 $('.template-tab-body', '#form-template-interface').append(nodeInterface);
                 $('.delete', '#form-template-interface').button({
                     icons : {primary : 'ui-icon-trash'},
@@ -335,9 +335,9 @@ kimchi.template_edit_main = function() {
 
         kimchi.updateTemplate($('#template-name').val(), data, function() {
             kimchi.doListTemplates();
-            kimchi.window.close();
+            wok.window.close();
         }, function(err) {
-            kimchi.message.error(err.responseJSON.reason);
+            wok.message.error(err.responseJSON.reason);
         });
     });
 };
