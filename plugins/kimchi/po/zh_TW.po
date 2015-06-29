@@ -5,14 +5,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kimchi 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-24 09:39-0300\n"
+"POT-Creation-Date: 2015-07-01 16:11-0300\n"
 "PO-Revision-Date: 2013-07-11 17:32-0400\n"
 "Last-Translator: Crístian Viana <vianac@linux.vnet.ibm.com>\n"
 "Language-Team: English\n"
-"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
 "Generated-By: pygettext.py 1.5\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -21,58 +21,11 @@ msgid "Unknown parameter %(value)s"
 msgstr ""
 
 #, python-format
-msgid "Delete is not allowed for %(resource)s"
-msgstr "不容許針對 %(resource)s 執行刪除"
-
-#, python-format
-msgid "%(resource)s does not implement update method"
-msgstr "%(resource)s 未實作更新方法"
-
-#, python-format
-msgid "Create is not allowed for %(resource)s"
-msgstr "不容許針對 %(resource)s 執行建立"
-
-msgid "Unable to parse JSON request"
-msgstr "無法剖析 JSON 要求"
-
-msgid "This API only supports JSON"
-msgstr "此 API 僅支援 JSON"
-
-#, python-format
-msgid "Parameters does not match requirement in schema: %(err)s"
-msgstr ""
-
-msgid "You don't have permission to perform this operation."
-msgstr ""
-
-msgid "Datastore is not initiated in the model object."
-msgstr "未在模型物件中起始資料儲存庫。"
-
-#, python-format
-msgid "Unable to start task due error: %(err)s"
-msgstr "由於下列錯誤，無法開始工作：%(err)s"
-
-#, python-format
 msgid "Timeout of %(seconds)s seconds expired while running task '%(task)s."
 msgstr ""
 
 #, python-format
-msgid "Authentication failed for user '%(username)s'. [Error code: %(code)s]"
-msgstr "使用者 '%(username)s' 的鑑別失敗。[錯誤碼：%(code)s]"
-
-msgid "You are not authorized to access Kimchi"
-msgstr "您未獲授權來存取 Kimchi"
-
-#, python-format
-msgid "Specify %(item)s to login into Kimchi"
-msgstr "指定 %(item)s 以登入 Kimchi"
-
-#, python-format
 msgid "User %(user_id)s not found with given LDAP settings."
-msgstr ""
-
-#, python-format
-msgid "Invalid LDAP configuration: %(item)s : %(value)s"
 msgstr ""
 
 msgid "Unknown \"_cap\" specified"
@@ -141,8 +94,8 @@ msgstr "讀取 ISO %(filename)s 中的磁區描述子時遇到不當的格式"
 msgid ""
 "The hypervisor doesn't have permission to use this ISO %(filename)s. "
 "Consider moving it under /var/lib/libvirt,  or set the search permission to "
-"file access control lists for '%(user)s' user if possible, or add the "
-"'%(user)s' to the ISO path group, or (not recommended) 'chmod -R o+x "
+"file access control lists for '%(user)s' user if possible, or add the '%"
+"(user)s' to the ISO path group, or (not recommended) 'chmod -R o+x "
 "'path_to_iso'.Details: %(err)s"
 msgstr ""
 "Hypervisor 沒有使用此 ISO %(filename)s 的許可權。請考量將其移動至 /var/lib/"
@@ -522,8 +475,8 @@ msgstr "無法建立儲存區 %(name)s。詳細資料：%(err)s"
 
 #, python-format
 msgid ""
-"Unable to get number of storage volumes in storage pool %(name)s. Details: "
-"%(err)s"
+"Unable to get number of storage volumes in storage pool %(name)s. Details: %"
+"(err)s"
 msgstr "無法取得儲存區 %(name)s 中儲存磁區的數目。詳細資料：%(err)s"
 
 #, python-format
@@ -592,8 +545,8 @@ msgstr "指定名稱和類型以建立儲存區"
 
 #, python-format
 msgid ""
-"%(disk)s is not a valid disk/partition. Could not add it to the pool "
-"%(pool)s."
+"%(disk)s is not a valid disk/partition. Could not add it to the pool %(pool)"
+"s."
 msgstr "%(disk)s 不是有效的磁碟/分割區。無法將它新增至儲存區%(pool)s。"
 
 #, python-format
@@ -665,8 +618,8 @@ msgstr "無法列出儲存磁區，因為儲存區 %(pool)s 未處於作用中�
 
 #, python-format
 msgid ""
-"Unable to create storage volume %(name)s in storage pool %(pool)s. Details: "
-"%(err)s"
+"Unable to create storage volume %(name)s in storage pool %(pool)s. Details: %"
+"(err)s"
 msgstr "無法在儲存區 %(pool)s 中建立儲存磁區 %(name)s。詳細資料：%(err)s"
 
 #, python-format
@@ -729,8 +682,8 @@ msgstr ""
 
 #, python-format
 msgid ""
-"Unable to clone storage volume '%(name)s' in pool '%(pool)s'. Details: "
-"%(err)s"
+"Unable to clone storage volume '%(name)s' in pool '%(pool)s'. Details: %(err)"
+"s"
 msgstr ""
 
 msgid "Specify chunk data and its size to upload a file."
@@ -823,8 +776,8 @@ msgstr ""
 
 #, python-format
 msgid ""
-"Unable to deactivate network %(name)s. There are some virtual machines "
-"%(vms)s and/or templates linked to this network."
+"Unable to deactivate network %(name)s. There are some virtual machines %(vms)"
+"s and/or templates linked to this network."
 msgstr ""
 
 #, python-format
@@ -918,26 +871,10 @@ msgid "There is no compatible package manager for this system."
 msgstr "沒有此系統的相容套件管理程式。"
 
 #, python-format
-msgid "Unable to find %(item)s in datastore"
-msgstr "在資料儲存庫中找不到 %(item)s"
-
-#, python-format
 msgid "Invalid URI %(uri)s"
 msgstr "URI %(uri)s 無效"
 
-#, python-format
-msgid "Timeout while running command '%(cmd)s' after %(seconds)s seconds"
-msgstr "執行指令 '%(cmd)s' %(seconds)s 秒之後逾時"
-
 msgid "Unable to choose a virtual machine name"
-msgstr ""
-
-#, python-format
-msgid "Invalid data value '%(value)s'"
-msgstr ""
-
-#, python-format
-msgid "Invalid data unit '%(unit)s'"
 msgstr ""
 
 msgid "Invalid storage type. Types supported: 'cdrom', 'disk'"
@@ -952,8 +889,8 @@ msgstr ""
 
 #, python-format
 msgid ""
-"The storage device %(dev_name)s does not exist in the virtual machine "
-"%(vm_name)s"
+"The storage device %(dev_name)s does not exist in the virtual machine %"
+"(vm_name)s"
 msgstr ""
 
 #, python-format
@@ -997,8 +934,8 @@ msgstr "指定類型和路徑以新增虛擬機器磁碟"
 
 #, python-format
 msgid ""
-"Volume chosen with format %(format)s does not fit in the storage type "
-"%(type)s"
+"Volume chosen with format %(format)s does not fit in the storage type %(type)"
+"s"
 msgstr ""
 
 msgid "YUM Repository ID must be one word only string."
@@ -1116,8 +1053,8 @@ msgstr ""
 
 #, python-format
 msgid ""
-"Unable to create snapshot '%(name)s' on virtual machine '%(vm)s'. Details: "
-"%(err)s"
+"Unable to create snapshot '%(name)s' on virtual machine '%(vm)s'. Details: %"
+"(err)s"
 msgstr ""
 
 #, python-format
@@ -1136,20 +1073,20 @@ msgstr ""
 
 #, python-format
 msgid ""
-"Unable to delete snapshot '%(name)s' on virtual machine '%(vm)s'. Details: "
-"%(err)s"
+"Unable to delete snapshot '%(name)s' on virtual machine '%(vm)s'. Details: %"
+"(err)s"
 msgstr ""
 
 #, python-format
 msgid ""
-"Unable to retrieve current snapshot of virtual machine '%(vm)s'. Details: "
-"%(err)s"
+"Unable to retrieve current snapshot of virtual machine '%(vm)s'. Details: %"
+"(err)s"
 msgstr ""
 
 #, python-format
 msgid ""
-"Unable to revert virtual machine '%(vm)s' to snapshot '%(name)s'. Details: "
-"%(err)s"
+"Unable to revert virtual machine '%(vm)s' to snapshot '%(name)s'. Details: %"
+"(err)s"
 msgstr ""
 
 #, python-format
@@ -1219,6 +1156,9 @@ msgstr "建立"
 
 msgid "Creating..."
 msgstr ""
+
+msgid "Cancel"
+msgstr "取消 "
 
 msgid "Edit Guest"
 msgstr "編輯客體"
@@ -1307,41 +1247,8 @@ msgstr "取代"
 msgid "Detach"
 msgstr "分離"
 
-msgid "Cancel"
-msgstr "取消 "
-
 msgid "revert"
 msgstr ""
-
-msgid "Add a Storage Device to VM"
-msgstr "將儲存裝置新增至 VM"
-
-msgid "Device Type"
-msgstr "裝置類型"
-
-msgid "The device type. Currently,  \"cdrom\" and \"disk\" are supported."
-msgstr "裝置類型。目前僅支援 \"cdrom\"。"
-
-msgid "Storage Pool"
-msgstr "儲存區"
-
-msgid "Storage pool which volume located in"
-msgstr "儲存區路徑必須是字串"
-
-msgid "Storage Volume"
-msgstr "儲存區名稱"
-
-msgid "Storage volume to be attached"
-msgstr "儲存磁區名稱必須是字串"
-
-msgid "File Path"
-msgstr "檔案路徑"
-
-msgid "The ISO file path in the server for CDROM."
-msgstr "CDROM 的 ISO 檔案路徑在伺服器中。"
-
-msgid "Attach"
-msgstr "連接"
 
 msgid "Start"
 msgstr "開始"
@@ -1375,6 +1282,87 @@ msgstr "關閉"
 
 msgid "Delete"
 msgstr "刪除"
+
+msgid "CPU"
+msgstr "CPU"
+
+msgid "Disk I/O"
+msgstr "磁碟 I/O"
+
+msgid "Network I/O"
+msgstr "網路 I/O"
+
+msgid "Livetile"
+msgstr "Livetile"
+
+msgid "No guests found."
+msgstr "找不到客體。"
+
+msgid "Add a Storage Device to VM"
+msgstr "將儲存裝置新增至 VM"
+
+msgid "Device Type"
+msgstr "裝置類型"
+
+msgid "The device type. Currently,  \"cdrom\" and \"disk\" are supported."
+msgstr "裝置類型。目前僅支援 \"cdrom\"。"
+
+msgid "Storage Pool"
+msgstr "儲存區"
+
+msgid "Storage pool which volume located in"
+msgstr "儲存區路徑必須是字串"
+
+msgid "Storage Volume"
+msgstr "儲存區名稱"
+
+msgid "Storage volume to be attached"
+msgstr "儲存磁區名稱必須是字串"
+
+msgid "File Path"
+msgstr "檔案路徑"
+
+msgid "The ISO file path in the server for CDROM."
+msgstr "CDROM 的 ISO 檔案路徑在伺服器中。"
+
+msgid "Attach"
+msgstr "連接"
+
+msgid "Shut down"
+msgstr "關閉"
+
+msgid "Restart"
+msgstr "重新啟動"
+
+msgid "Basic Information"
+msgstr "基本資訊"
+
+msgid "OS Distro"
+msgstr "OS Distro"
+
+msgid "OS Code Name"
+msgstr "OS 程式碼名稱"
+
+msgid "Processor"
+msgstr "處理器"
+
+msgid "CPU(s)"
+msgstr ""
+
+msgid "System Statistics"
+msgstr "系統統計資料"
+
+msgid "Software Updates"
+msgstr "軟體更新"
+
+msgid "Update Progress"
+msgstr "更新進度"
+
+msgid "Repositories"
+msgstr "儲存庫"
+
+msgid "Debug Reports"
+msgstr "除錯報告"
 
 msgid "The username or password you entered is incorrect. Please try again."
 msgstr "您輸入的使用者名稱或密碼不正確。請重試。"
@@ -1495,9 +1483,6 @@ msgid ""
 "to continue?"
 msgstr "將會永久地移除儲存庫並且無法回復。要繼續嗎？"
 
-msgid "Repositories"
-msgstr "儲存庫"
-
 msgid "ID"
 msgstr "ID"
 
@@ -1531,9 +1516,6 @@ msgstr "啟用"
 msgid "Disable"
 msgstr "停用"
 
-msgid "Software Updates"
-msgstr "軟體更新"
-
 msgid "Package Name"
 msgstr "套件名稱"
 
@@ -1562,9 +1544,6 @@ msgid ""
 "Debug report will be removed permanently and can't be recovered. Do you want "
 "to continue?"
 msgstr "將會永久地移除除錯報告並且無法回復。要繼續嗎？"
-
-msgid "Debug Reports"
-msgstr "除錯報告"
 
 msgid "Generated Time"
 msgstr "產生時間"
@@ -1784,35 +1763,47 @@ msgstr ""
 msgid "Disk pool or volume cannot be blank."
 msgstr "儲存區名稱不能空白。"
 
-msgid "Peers"
+msgid "Filter"
 msgstr ""
 
-msgid "Searching"
+msgid "Network Name"
+msgstr "網路名稱"
+
+msgid "State"
+msgstr "狀態"
+
+msgid "Network Type"
+msgstr "網路類型"
+
+msgid "Address Space"
+msgstr "位址空間"
+
+msgid "Name should not contain '/' and '\"'."
+msgstr "儲存區名稱無效。它不應該包含 '/'。"
+
+msgid "Isolated: no external network connection"
+msgstr "已隔離：沒有實體網路連線"
+
+msgid "NAT: outbound physical network connection only"
+msgstr "NAT：僅限出埠實體網路連線"
+
+msgid "Bridged: Virtual machines are connected to physical network directly"
+msgstr "已橋接：虛擬機器直接已連接至實體網路"
+
+msgid "(No interfaces found)"
 msgstr ""
 
-msgid "No peers found."
-msgstr ""
+msgid "Destination"
+msgstr "目的地："
 
-msgid "Help"
-msgstr "說明"
+msgid "Enable VLAN"
+msgstr "啟用 VLAN："
 
-msgid "About"
-msgstr "相關"
+msgid "VLAN ID"
+msgstr "VLAN ID："
 
-msgid "Log out"
-msgstr "登出"
-
-msgid "Version:"
-msgstr "版本："
-
-msgid "Session timeout, please re-login."
-msgstr ""
-
-msgid "User Name"
-msgstr "使用者名稱"
-
-msgid "Password"
-msgstr "密碼"
+msgid "Stop"
+msgstr "停止"
 
 msgid "Generate a New Debug Report"
 msgstr "產生新的除錯報告"
@@ -1889,20 +1880,44 @@ msgstr "是"
 msgid "No"
 msgstr "否"
 
-msgid "Add a Volume to Storage Pool"
+msgid "Capacity"
+msgstr "容量"
+
+msgid "Allocated"
+msgstr "已配置"
+
+msgid "Location"
+msgstr "位置"
+
+msgid "Device path"
+msgstr "裝置路徑"
+
+msgid "active"
+msgstr "作用中"
+
+msgid "inactive"
+msgstr "非作用中"
+
+msgid "Deactivate"
+msgstr "取消啟動"
+
+msgid "Activate"
+msgstr "啟動"
+
+msgid "Add Volume"
 msgstr ""
 
-msgid "Fetch from remote URL"
+msgid "Extend"
 msgstr ""
 
-msgid "Enter the remote URL here."
-msgstr ""
+msgid "Undefine"
+msgstr "取消定義"
 
-msgid "Upload a file"
-msgstr ""
+msgid "Format"
+msgstr "格式："
 
-msgid "Choose the file you want to upload."
-msgstr ""
+msgid "Allocation"
+msgstr "配置："
 
 msgid "Define a New Storage Pool"
 msgstr "定義新的儲存區"
@@ -1941,20 +1956,17 @@ msgstr "NFS 路徑"
 msgid "The NFS exported path on NFS server."
 msgstr "NFS 伺服器上 NFS 匯出的路徑。"
 
-msgid "Device path"
-msgstr "裝置路徑"
-
 msgid "iSCSI Server"
 msgstr "iSCSI 伺服器"
-
-msgid "iSCSI server IP or hostname. It should not be empty."
-msgstr "iSCSI 伺服器 IP 或主機名稱。它不應該是空的。"
 
 msgid "Server"
 msgstr "伺服器"
 
 msgid "Port"
 msgstr "埠"
+
+msgid "iSCSI server IP or hostname. It should not be empty."
+msgstr "iSCSI 伺服器 IP 或主機名稱。它不應該是空的。"
 
 msgid "Target"
 msgstr "目標"
@@ -1968,11 +1980,32 @@ msgstr "新增 iSCSI 鑑別"
 msgid "iSCSI Authentication"
 msgstr "iSCSI 鑑別"
 
+msgid "User Name"
+msgstr "使用者名稱"
+
+msgid "Password"
+msgstr "密碼"
+
 msgid "SCSI Adapter"
 msgstr "SCSI 配接卡"
 
 msgid "Please, wait..."
 msgstr "請稍候..."
+
+msgid "Add a Volume to Storage Pool"
+msgstr ""
+
+msgid "Fetch from remote URL"
+msgstr ""
+
+msgid "Enter the remote URL here."
+msgstr ""
+
+msgid "Upload a file"
+msgstr ""
+
+msgid "Choose the file you want to upload."
+msgstr ""
 
 msgid "Add Template"
 msgstr "新增範本"
@@ -2025,9 +2058,6 @@ msgstr "我想使用自訂 URL"
 msgid "Edit Template"
 msgstr "編輯範本"
 
-msgid "Processor"
-msgstr "處理器"
-
 msgid "CDROM"
 msgstr "CDROM"
 
@@ -2055,122 +2085,54 @@ msgstr ""
 msgid "Threads"
 msgstr ""
 
-msgid "CPU"
-msgstr "CPU"
-
-msgid "Disk I/O"
-msgstr "磁碟 I/O"
-
-msgid "Network I/O"
-msgstr "網路 I/O"
-
-msgid "Livetile"
-msgstr "Livetile"
-
-msgid "No guests found."
-msgstr "找不到客體。"
-
-msgid "Shut down"
-msgstr "關閉"
-
-msgid "Restart"
-msgstr "重新啟動"
-
-msgid "Basic Information"
-msgstr "基本資訊"
-
-msgid "OS Distro"
-msgstr "OS Distro"
-
-msgid "OS Code Name"
-msgstr "OS 程式碼名稱"
-
-msgid "CPU(s)"
-msgstr ""
-
-msgid "System Statistics"
-msgstr "系統統計資料"
-
-msgid "Update Progress"
-msgstr "更新進度"
-
-msgid "Network Name"
-msgstr "網路名稱"
-
-msgid "State"
-msgstr "狀態"
-
-msgid "Network Type"
-msgstr "網路類型"
-
-msgid "Address Space"
-msgstr "位址空間"
-
-msgid "Name should not contain '/' and '\"'."
-msgstr "儲存區名稱無效。它不應該包含 '/'。"
-
-msgid "Isolated: no external network connection"
-msgstr "已隔離：沒有實體網路連線"
-
-msgid "NAT: outbound physical network connection only"
-msgstr "NAT：僅限出埠實體網路連線"
-
-msgid "Bridged: Virtual machines are connected to physical network directly"
-msgstr "已橋接：虛擬機器直接已連接至實體網路"
-
-msgid "(No interfaces found)"
-msgstr ""
-
-msgid "Destination"
-msgstr "目的地："
-
-msgid "Enable VLAN"
-msgstr "啟用 VLAN："
-
-msgid "VLAN ID"
-msgstr "VLAN ID："
-
-msgid "Stop"
-msgstr "停止"
-
-msgid "%Used"
-msgstr ""
-
-msgid "Location"
-msgstr "位置"
-
-msgid "Capacity"
-msgstr "容量"
-
-msgid "Allocated"
-msgstr "已配置"
-
-msgid "active"
-msgstr "作用中"
-
-msgid "inactive"
-msgstr "非作用中"
-
-msgid "Deactivate"
-msgstr "取消啟動"
-
-msgid "Activate"
-msgstr "啟動"
-
-msgid "Add Volume"
-msgstr ""
-
-msgid "Extend"
-msgstr ""
-
-msgid "Undefine"
-msgstr "取消定義"
-
-msgid "Format"
-msgstr "格式："
-
-msgid "Allocation"
-msgstr "配置："
-
 msgid "No templates found."
 msgstr "找不到範本。"
+
+#~ msgid "Delete is not allowed for %(resource)s"
+#~ msgstr "不容許針對 %(resource)s 執行刪除"
+
+#~ msgid "%(resource)s does not implement update method"
+#~ msgstr "%(resource)s 未實作更新方法"
+
+#~ msgid "Create is not allowed for %(resource)s"
+#~ msgstr "不容許針對 %(resource)s 執行建立"
+
+#~ msgid "Unable to parse JSON request"
+#~ msgstr "無法剖析 JSON 要求"
+
+#~ msgid "This API only supports JSON"
+#~ msgstr "此 API 僅支援 JSON"
+
+#~ msgid "Datastore is not initiated in the model object."
+#~ msgstr "未在模型物件中起始資料儲存庫。"
+
+#~ msgid "Unable to start task due error: %(err)s"
+#~ msgstr "由於下列錯誤，無法開始工作：%(err)s"
+
+#~ msgid ""
+#~ "Authentication failed for user '%(username)s'. [Error code: %(code)s]"
+#~ msgstr "使用者 '%(username)s' 的鑑別失敗。[錯誤碼：%(code)s]"
+
+#~ msgid "You are not authorized to access Kimchi"
+#~ msgstr "您未獲授權來存取 Kimchi"
+
+#~ msgid "Specify %(item)s to login into Kimchi"
+#~ msgstr "指定 %(item)s 以登入 Kimchi"
+
+#~ msgid "Unable to find %(item)s in datastore"
+#~ msgstr "在資料儲存庫中找不到 %(item)s"
+
+#~ msgid "Timeout while running command '%(cmd)s' after %(seconds)s seconds"
+#~ msgstr "執行指令 '%(cmd)s' %(seconds)s 秒之後逾時"
+
+#~ msgid "Help"
+#~ msgstr "說明"
+
+#~ msgid "About"
+#~ msgstr "相關"
+
+#~ msgid "Log out"
+#~ msgstr "登出"
+
+#~ msgid "Version:"
+#~ msgstr "版本："

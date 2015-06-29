@@ -5,14 +5,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kimchi 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-24 09:39-0300\n"
+"POT-Creation-Date: 2015-07-01 16:11-0300\n"
 "PO-Revision-Date: 2013-07-11 17:32-0400\n"
 "Last-Translator: Crístian Viana <vianac@linux.vnet.ibm.com>\n"
 "Language-Team: English\n"
-"Language: ko_KR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ko_KR\n"
 "Generated-By: pygettext.py 1.5\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -21,58 +21,11 @@ msgid "Unknown parameter %(value)s"
 msgstr ""
 
 #, python-format
-msgid "Delete is not allowed for %(resource)s"
-msgstr "%(resource)s의 삭제는 허용되지 않음"
-
-#, python-format
-msgid "%(resource)s does not implement update method"
-msgstr "%(resource)s에서는 업데이트 메소드를 구현하지 않음"
-
-#, python-format
-msgid "Create is not allowed for %(resource)s"
-msgstr "%(resource)s의 작성은 허용되지 않음"
-
-msgid "Unable to parse JSON request"
-msgstr "JSON 요청을 구문 분석할 수 없습니다."
-
-msgid "This API only supports JSON"
-msgstr "이 API는 JSON만 지원합니다."
-
-#, python-format
-msgid "Parameters does not match requirement in schema: %(err)s"
-msgstr ""
-
-msgid "You don't have permission to perform this operation."
-msgstr ""
-
-msgid "Datastore is not initiated in the model object."
-msgstr "데이터 저장소가 모델 오브젝트에서 시작되지 않았습니다."
-
-#, python-format
-msgid "Unable to start task due error: %(err)s"
-msgstr "오류 때문에 작업을 시작할 수 없음: %(err)s"
-
-#, python-format
 msgid "Timeout of %(seconds)s seconds expired while running task '%(task)s."
 msgstr ""
 
 #, python-format
-msgid "Authentication failed for user '%(username)s'. [Error code: %(code)s]"
-msgstr "사용자 '%(username)s'의 인증이 실패했습니다. [오류 코드: %(code)s]"
-
-msgid "You are not authorized to access Kimchi"
-msgstr "Kimchi에 액세스할 권한이 없습니다."
-
-#, python-format
-msgid "Specify %(item)s to login into Kimchi"
-msgstr "Kimchi에 로그인하려면 %(item)s을(를) 지정하십시오."
-
-#, python-format
 msgid "User %(user_id)s not found with given LDAP settings."
-msgstr ""
-
-#, python-format
-msgid "Invalid LDAP configuration: %(item)s : %(value)s"
 msgstr ""
 
 msgid "Unknown \"_cap\" specified"
@@ -146,8 +99,8 @@ msgstr ""
 msgid ""
 "The hypervisor doesn't have permission to use this ISO %(filename)s. "
 "Consider moving it under /var/lib/libvirt,  or set the search permission to "
-"file access control lists for '%(user)s' user if possible, or add the "
-"'%(user)s' to the ISO path group, or (not recommended) 'chmod -R o+x "
+"file access control lists for '%(user)s' user if possible, or add the '%"
+"(user)s' to the ISO path group, or (not recommended) 'chmod -R o+x "
 "'path_to_iso'.Details: %(err)s"
 msgstr ""
 "하이퍼바이저가 이 ISO %(filename)s을(를) 사용할 권한이 없습니다. 이를 /var/"
@@ -535,8 +488,8 @@ msgstr "스토리지 풀 %(name)s을(를) 작성할 수 없습니다. 세부사�
 
 #, python-format
 msgid ""
-"Unable to get number of storage volumes in storage pool %(name)s. Details: "
-"%(err)s"
+"Unable to get number of storage volumes in storage pool %(name)s. Details: %"
+"(err)s"
 msgstr ""
 "스토리지 풀 %(name)s에 있는 스토리지 볼륨의 수를 가져올 수 없습니다. 세부사"
 "항: %(err)s"
@@ -610,8 +563,8 @@ msgstr "스토리지 풀을 작성하려면 이름 및 유형을 지정하십시
 
 #, python-format
 msgid ""
-"%(disk)s is not a valid disk/partition. Could not add it to the pool "
-"%(pool)s."
+"%(disk)s is not a valid disk/partition. Could not add it to the pool %(pool)"
+"s."
 msgstr ""
 "%(disk)s은(는) 유효한 디스크/파티션이 아닙니다. 이를 %(pool)s 풀에 추가할 수 "
 "없습니다."
@@ -695,8 +648,8 @@ msgstr ""
 
 #, python-format
 msgid ""
-"Unable to create storage volume %(name)s in storage pool %(pool)s. Details: "
-"%(err)s"
+"Unable to create storage volume %(name)s in storage pool %(pool)s. Details: %"
+"(err)s"
 msgstr ""
 "스토리지 볼륨 %(name)s을(를) 스토리지 풀 %(pool)s에 작성할 수 없습니다. 세부"
 "사항: %(err)s"
@@ -763,8 +716,8 @@ msgstr ""
 
 #, python-format
 msgid ""
-"Unable to clone storage volume '%(name)s' in pool '%(pool)s'. Details: "
-"%(err)s"
+"Unable to clone storage volume '%(name)s' in pool '%(pool)s'. Details: %(err)"
+"s"
 msgstr ""
 
 msgid "Specify chunk data and its size to upload a file."
@@ -862,8 +815,8 @@ msgstr ""
 
 #, python-format
 msgid ""
-"Unable to deactivate network %(name)s. There are some virtual machines "
-"%(vms)s and/or templates linked to this network."
+"Unable to deactivate network %(name)s. There are some virtual machines %(vms)"
+"s and/or templates linked to this network."
 msgstr ""
 
 #, python-format
@@ -956,33 +909,17 @@ msgstr "패키지 %(name)s은(는) 업데이트되도록 표시되지 않았습�
 #, python-format
 msgid "Error while getting packages marked to be updated. Details: %(err)s"
 msgstr ""
-"업데이트되도록 표시된 패키지를 가져오는 중에 오류가 발생했습니다. 세부사항: "
-"%(err)s"
+"업데이트되도록 표시된 패키지를 가져오는 중에 오류가 발생했습니다. 세부사항: %"
+"(err)s"
 
 msgid "There is no compatible package manager for this system."
 msgstr "이 시스템에 대해 호환 가능한 패키지 관리자가 없습니다."
 
 #, python-format
-msgid "Unable to find %(item)s in datastore"
-msgstr "데이터 저장소에서 %(item)s을(를) 찾을 수 없습니다."
-
-#, python-format
 msgid "Invalid URI %(uri)s"
 msgstr "올바르지 않은 URI %(uri)s"
 
-#, python-format
-msgid "Timeout while running command '%(cmd)s' after %(seconds)s seconds"
-msgstr "%(seconds)s초 후에 '%(cmd)s' 명령 실행 중 제한시간이 초과되었습니다."
-
 msgid "Unable to choose a virtual machine name"
-msgstr ""
-
-#, python-format
-msgid "Invalid data value '%(value)s'"
-msgstr ""
-
-#, python-format
-msgid "Invalid data unit '%(unit)s'"
 msgstr ""
 
 msgid "Invalid storage type. Types supported: 'cdrom', 'disk'"
@@ -997,8 +934,8 @@ msgstr ""
 
 #, python-format
 msgid ""
-"The storage device %(dev_name)s does not exist in the virtual machine "
-"%(vm_name)s"
+"The storage device %(dev_name)s does not exist in the virtual machine %"
+"(vm_name)s"
 msgstr ""
 
 #, python-format
@@ -1042,8 +979,8 @@ msgstr "새 가상 머신 디스크를 추가할 유형 및 경로를 지정하�
 
 #, python-format
 msgid ""
-"Volume chosen with format %(format)s does not fit in the storage type "
-"%(type)s"
+"Volume chosen with format %(format)s does not fit in the storage type %(type)"
+"s"
 msgstr ""
 
 msgid "YUM Repository ID must be one word only string."
@@ -1161,8 +1098,8 @@ msgstr ""
 
 #, python-format
 msgid ""
-"Unable to create snapshot '%(name)s' on virtual machine '%(vm)s'. Details: "
-"%(err)s"
+"Unable to create snapshot '%(name)s' on virtual machine '%(vm)s'. Details: %"
+"(err)s"
 msgstr ""
 
 #, python-format
@@ -1181,20 +1118,20 @@ msgstr ""
 
 #, python-format
 msgid ""
-"Unable to delete snapshot '%(name)s' on virtual machine '%(vm)s'. Details: "
-"%(err)s"
+"Unable to delete snapshot '%(name)s' on virtual machine '%(vm)s'. Details: %"
+"(err)s"
 msgstr ""
 
 #, python-format
 msgid ""
-"Unable to retrieve current snapshot of virtual machine '%(vm)s'. Details: "
-"%(err)s"
+"Unable to retrieve current snapshot of virtual machine '%(vm)s'. Details: %"
+"(err)s"
 msgstr ""
 
 #, python-format
 msgid ""
-"Unable to revert virtual machine '%(vm)s' to snapshot '%(name)s'. Details: "
-"%(err)s"
+"Unable to revert virtual machine '%(vm)s' to snapshot '%(name)s'. Details: %"
+"(err)s"
 msgstr ""
 
 #, python-format
@@ -1266,6 +1203,9 @@ msgstr "작성"
 
 msgid "Creating..."
 msgstr ""
+
+msgid "Cancel"
+msgstr "취소"
 
 msgid "Edit Guest"
 msgstr "게스트 편집"
@@ -1354,41 +1294,8 @@ msgstr "교체"
 msgid "Detach"
 msgstr "분리"
 
-msgid "Cancel"
-msgstr "취소"
-
 msgid "revert"
 msgstr ""
-
-msgid "Add a Storage Device to VM"
-msgstr "스토리지 장치를 VM에 추가"
-
-msgid "Device Type"
-msgstr "장치 유형"
-
-msgid "The device type. Currently,  \"cdrom\" and \"disk\" are supported."
-msgstr "장치 유형입니다. 현재 \"cdrom\"만 지원됩니다."
-
-msgid "Storage Pool"
-msgstr "스토리지 풀"
-
-msgid "Storage pool which volume located in"
-msgstr "스토리지 풀 경로는 문자열이어야 합니다."
-
-msgid "Storage Volume"
-msgstr "스토리지 풀 이름"
-
-msgid "Storage volume to be attached"
-msgstr "스토리지 볼륨 이름은 문자열이어야 합니다."
-
-msgid "File Path"
-msgstr "파일 경로"
-
-msgid "The ISO file path in the server for CDROM."
-msgstr "CDROM을 위한 서버의 ISO 파일 경로입니다."
-
-msgid "Attach"
-msgstr "연결"
 
 msgid "Start"
 msgstr "시작"
@@ -1422,6 +1329,87 @@ msgstr "시스템 종료"
 
 msgid "Delete"
 msgstr "삭제"
+
+msgid "CPU"
+msgstr "CPU"
+
+msgid "Disk I/O"
+msgstr "디스크 I/O"
+
+msgid "Network I/O"
+msgstr "네트워크 I/O"
+
+msgid "Livetile"
+msgstr "라이브타일"
+
+msgid "No guests found."
+msgstr "게스트가 없습니다."
+
+msgid "Add a Storage Device to VM"
+msgstr "스토리지 장치를 VM에 추가"
+
+msgid "Device Type"
+msgstr "장치 유형"
+
+msgid "The device type. Currently,  \"cdrom\" and \"disk\" are supported."
+msgstr "장치 유형입니다. 현재 \"cdrom\"만 지원됩니다."
+
+msgid "Storage Pool"
+msgstr "스토리지 풀"
+
+msgid "Storage pool which volume located in"
+msgstr "스토리지 풀 경로는 문자열이어야 합니다."
+
+msgid "Storage Volume"
+msgstr "스토리지 풀 이름"
+
+msgid "Storage volume to be attached"
+msgstr "스토리지 볼륨 이름은 문자열이어야 합니다."
+
+msgid "File Path"
+msgstr "파일 경로"
+
+msgid "The ISO file path in the server for CDROM."
+msgstr "CDROM을 위한 서버의 ISO 파일 경로입니다."
+
+msgid "Attach"
+msgstr "연결"
+
+msgid "Shut down"
+msgstr "시스템 종료"
+
+msgid "Restart"
+msgstr "다시 시작"
+
+msgid "Basic Information"
+msgstr "기본 정보"
+
+msgid "OS Distro"
+msgstr "OS Distro"
+
+msgid "OS Code Name"
+msgstr "OS 코드 이름"
+
+msgid "Processor"
+msgstr "프로세서"
+
+msgid "CPU(s)"
+msgstr ""
+
+msgid "System Statistics"
+msgstr "시스템 통계"
+
+msgid "Software Updates"
+msgstr "소프트웨어 업데이트"
+
+msgid "Update Progress"
+msgstr "진행상태 업데이트"
+
+msgid "Repositories"
+msgstr "저장소"
+
+msgid "Debug Reports"
+msgstr "디버그 보고서"
 
 msgid "The username or password you entered is incorrect. Please try again."
 msgstr ""
@@ -1545,9 +1533,6 @@ msgid ""
 "to continue?"
 msgstr "저장소가 영구적으로 제거되어 복구할 수 없습니다. 계속하시겠습니까?"
 
-msgid "Repositories"
-msgstr "저장소"
-
 msgid "ID"
 msgstr "ID"
 
@@ -1581,9 +1566,6 @@ msgstr "사용"
 msgid "Disable"
 msgstr "사용 안함"
 
-msgid "Software Updates"
-msgstr "소프트웨어 업데이트"
-
 msgid "Package Name"
 msgstr "패키지 이름"
 
@@ -1613,9 +1595,6 @@ msgid ""
 "to continue?"
 msgstr ""
 "디버그 보고서가 영구적으로 제거되어 복구할 수 없습니다. 계속하시겠습니까?"
-
-msgid "Debug Reports"
-msgstr "디버그 보고서"
 
 msgid "Generated Time"
 msgstr "생성 시간"
@@ -1839,35 +1818,47 @@ msgstr ""
 msgid "Disk pool or volume cannot be blank."
 msgstr "스토리지 풀 이름은 비워둘 수 없습니다."
 
-msgid "Peers"
+msgid "Filter"
 msgstr ""
 
-msgid "Searching"
+msgid "Network Name"
+msgstr "네트워크 이름"
+
+msgid "State"
+msgstr "상태"
+
+msgid "Network Type"
+msgstr "네트워크 유형"
+
+msgid "Address Space"
+msgstr "주소 공간"
+
+msgid "Name should not contain '/' and '\"'."
+msgstr "올바르지 않은 스토리지 풀 이름입니다. '/'를 포함하지 않아야 합니다."
+
+msgid "Isolated: no external network connection"
+msgstr "격리됨: 물리적 네트워크 연결 없음"
+
+msgid "NAT: outbound physical network connection only"
+msgstr "NAT: 아웃바운드 물리적 네트워크 연결만"
+
+msgid "Bridged: Virtual machines are connected to physical network directly"
+msgstr "브릿지됨: 가상 머신이 물리적 네트워크에 직접 연결됨"
+
+msgid "(No interfaces found)"
 msgstr ""
 
-msgid "No peers found."
-msgstr ""
+msgid "Destination"
+msgstr "대상:"
 
-msgid "Help"
-msgstr "도움말"
+msgid "Enable VLAN"
+msgstr "VLAN 사용:"
 
-msgid "About"
-msgstr "정보"
+msgid "VLAN ID"
+msgstr "VLAN ID:"
 
-msgid "Log out"
-msgstr "로그아웃"
-
-msgid "Version:"
-msgstr "버전: "
-
-msgid "Session timeout, please re-login."
-msgstr ""
-
-msgid "User Name"
-msgstr "사용자 이름"
-
-msgid "Password"
-msgstr "비밀번호"
+msgid "Stop"
+msgstr "중지"
 
 msgid "Generate a New Debug Report"
 msgstr "새 디버그 보고서 생성"
@@ -1944,20 +1935,44 @@ msgstr "예"
 msgid "No"
 msgstr "아니오"
 
-msgid "Add a Volume to Storage Pool"
+msgid "Capacity"
+msgstr "용량"
+
+msgid "Allocated"
+msgstr "할당됨"
+
+msgid "Location"
+msgstr "위치"
+
+msgid "Device path"
+msgstr "장치 경로"
+
+msgid "active"
+msgstr "활성"
+
+msgid "inactive"
+msgstr "비활성"
+
+msgid "Deactivate"
+msgstr "비활성화"
+
+msgid "Activate"
+msgstr "활성화"
+
+msgid "Add Volume"
 msgstr ""
 
-msgid "Fetch from remote URL"
+msgid "Extend"
 msgstr ""
 
-msgid "Enter the remote URL here."
-msgstr ""
+msgid "Undefine"
+msgstr "정의 취소"
 
-msgid "Upload a file"
-msgstr ""
+msgid "Format"
+msgstr "포맷:"
 
-msgid "Choose the file you want to upload."
-msgstr ""
+msgid "Allocation"
+msgstr "할당:"
 
 msgid "Define a New Storage Pool"
 msgstr "새 스토리지 풀 정의"
@@ -1999,20 +2014,17 @@ msgstr "NFS 경로"
 msgid "The NFS exported path on NFS server."
 msgstr "NFS 서버에서 NFS의 내보낸 경로입니다."
 
-msgid "Device path"
-msgstr "장치 경로"
-
 msgid "iSCSI Server"
 msgstr "iSCSI 서버"
-
-msgid "iSCSI server IP or hostname. It should not be empty."
-msgstr "iSCSI 서버 IP 또는 호스트 이름입니다. 비어 있지 않아야 합니다."
 
 msgid "Server"
 msgstr "서버"
 
 msgid "Port"
 msgstr "포트"
+
+msgid "iSCSI server IP or hostname. It should not be empty."
+msgstr "iSCSI 서버 IP 또는 호스트 이름입니다. 비어 있지 않아야 합니다."
 
 msgid "Target"
 msgstr "대상"
@@ -2026,11 +2038,32 @@ msgstr "iSCSI 인증 추가"
 msgid "iSCSI Authentication"
 msgstr "iSCSI 인증"
 
+msgid "User Name"
+msgstr "사용자 이름"
+
+msgid "Password"
+msgstr "비밀번호"
+
 msgid "SCSI Adapter"
 msgstr "SCSI 어댑터"
 
 msgid "Please, wait..."
 msgstr "잠시 기다려 주십시오."
+
+msgid "Add a Volume to Storage Pool"
+msgstr ""
+
+msgid "Fetch from remote URL"
+msgstr ""
+
+msgid "Enter the remote URL here."
+msgstr ""
+
+msgid "Upload a file"
+msgstr ""
+
+msgid "Choose the file you want to upload."
+msgstr ""
 
 msgid "Add Template"
 msgstr "템플리트 추가"
@@ -2083,9 +2116,6 @@ msgstr "사용자 정의 URL을 사용하려고 합니다."
 msgid "Edit Template"
 msgstr "템플리트 편집"
 
-msgid "Processor"
-msgstr "프로세서"
-
 msgid "CDROM"
 msgstr "CDROM"
 
@@ -2113,122 +2143,55 @@ msgstr ""
 msgid "Threads"
 msgstr ""
 
-msgid "CPU"
-msgstr "CPU"
-
-msgid "Disk I/O"
-msgstr "디스크 I/O"
-
-msgid "Network I/O"
-msgstr "네트워크 I/O"
-
-msgid "Livetile"
-msgstr "라이브타일"
-
-msgid "No guests found."
-msgstr "게스트가 없습니다."
-
-msgid "Shut down"
-msgstr "시스템 종료"
-
-msgid "Restart"
-msgstr "다시 시작"
-
-msgid "Basic Information"
-msgstr "기본 정보"
-
-msgid "OS Distro"
-msgstr "OS Distro"
-
-msgid "OS Code Name"
-msgstr "OS 코드 이름"
-
-msgid "CPU(s)"
-msgstr ""
-
-msgid "System Statistics"
-msgstr "시스템 통계"
-
-msgid "Update Progress"
-msgstr "진행상태 업데이트"
-
-msgid "Network Name"
-msgstr "네트워크 이름"
-
-msgid "State"
-msgstr "상태"
-
-msgid "Network Type"
-msgstr "네트워크 유형"
-
-msgid "Address Space"
-msgstr "주소 공간"
-
-msgid "Name should not contain '/' and '\"'."
-msgstr "올바르지 않은 스토리지 풀 이름입니다. '/'를 포함하지 않아야 합니다."
-
-msgid "Isolated: no external network connection"
-msgstr "격리됨: 물리적 네트워크 연결 없음"
-
-msgid "NAT: outbound physical network connection only"
-msgstr "NAT: 아웃바운드 물리적 네트워크 연결만"
-
-msgid "Bridged: Virtual machines are connected to physical network directly"
-msgstr "브릿지됨: 가상 머신이 물리적 네트워크에 직접 연결됨"
-
-msgid "(No interfaces found)"
-msgstr ""
-
-msgid "Destination"
-msgstr "대상:"
-
-msgid "Enable VLAN"
-msgstr "VLAN 사용:"
-
-msgid "VLAN ID"
-msgstr "VLAN ID:"
-
-msgid "Stop"
-msgstr "중지"
-
-msgid "%Used"
-msgstr ""
-
-msgid "Location"
-msgstr "위치"
-
-msgid "Capacity"
-msgstr "용량"
-
-msgid "Allocated"
-msgstr "할당됨"
-
-msgid "active"
-msgstr "활성"
-
-msgid "inactive"
-msgstr "비활성"
-
-msgid "Deactivate"
-msgstr "비활성화"
-
-msgid "Activate"
-msgstr "활성화"
-
-msgid "Add Volume"
-msgstr ""
-
-msgid "Extend"
-msgstr ""
-
-msgid "Undefine"
-msgstr "정의 취소"
-
-msgid "Format"
-msgstr "포맷:"
-
-msgid "Allocation"
-msgstr "할당:"
-
 msgid "No templates found."
 msgstr "템플리트가 없습니다."
+
+#~ msgid "Delete is not allowed for %(resource)s"
+#~ msgstr "%(resource)s의 삭제는 허용되지 않음"
+
+#~ msgid "%(resource)s does not implement update method"
+#~ msgstr "%(resource)s에서는 업데이트 메소드를 구현하지 않음"
+
+#~ msgid "Create is not allowed for %(resource)s"
+#~ msgstr "%(resource)s의 작성은 허용되지 않음"
+
+#~ msgid "Unable to parse JSON request"
+#~ msgstr "JSON 요청을 구문 분석할 수 없습니다."
+
+#~ msgid "This API only supports JSON"
+#~ msgstr "이 API는 JSON만 지원합니다."
+
+#~ msgid "Datastore is not initiated in the model object."
+#~ msgstr "데이터 저장소가 모델 오브젝트에서 시작되지 않았습니다."
+
+#~ msgid "Unable to start task due error: %(err)s"
+#~ msgstr "오류 때문에 작업을 시작할 수 없음: %(err)s"
+
+#~ msgid ""
+#~ "Authentication failed for user '%(username)s'. [Error code: %(code)s]"
+#~ msgstr "사용자 '%(username)s'의 인증이 실패했습니다. [오류 코드: %(code)s]"
+
+#~ msgid "You are not authorized to access Kimchi"
+#~ msgstr "Kimchi에 액세스할 권한이 없습니다."
+
+#~ msgid "Specify %(item)s to login into Kimchi"
+#~ msgstr "Kimchi에 로그인하려면 %(item)s을(를) 지정하십시오."
+
+#~ msgid "Unable to find %(item)s in datastore"
+#~ msgstr "데이터 저장소에서 %(item)s을(를) 찾을 수 없습니다."
+
+#~ msgid "Timeout while running command '%(cmd)s' after %(seconds)s seconds"
+#~ msgstr ""
+#~ "%(seconds)s초 후에 '%(cmd)s' 명령 실행 중 제한시간이 초과되었습니다."
+
+#~ msgid "Help"
+#~ msgstr "도움말"
+
+#~ msgid "About"
+#~ msgstr "정보"
+
+#~ msgid "Log out"
+#~ msgstr "로그아웃"
+
+#~ msgid "Version:"
+#~ msgstr "버전: "

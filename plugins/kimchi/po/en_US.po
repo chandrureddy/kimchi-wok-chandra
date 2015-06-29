@@ -6,14 +6,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kimchi 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-24 09:39-0300\n"
+"POT-Creation-Date: 2015-07-01 16:11-0300\n"
 "PO-Revision-Date: 2013-07-11 17:32-0400\n"
 "Last-Translator: Crístian Viana <vianac@linux.vnet.ibm.com>\n"
 "Language-Team: English\n"
-"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: en_US\n"
 "Generated-By: pygettext.py 1.5\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -22,58 +22,11 @@ msgid "Unknown parameter %(value)s"
 msgstr ""
 
 #, python-format
-msgid "Delete is not allowed for %(resource)s"
-msgstr ""
-
-#, python-format
-msgid "%(resource)s does not implement update method"
-msgstr ""
-
-#, python-format
-msgid "Create is not allowed for %(resource)s"
-msgstr ""
-
-msgid "Unable to parse JSON request"
-msgstr ""
-
-msgid "This API only supports JSON"
-msgstr ""
-
-#, python-format
-msgid "Parameters does not match requirement in schema: %(err)s"
-msgstr ""
-
-msgid "You don't have permission to perform this operation."
-msgstr ""
-
-msgid "Datastore is not initiated in the model object."
-msgstr ""
-
-#, python-format
-msgid "Unable to start task due error: %(err)s"
-msgstr ""
-
-#, python-format
 msgid "Timeout of %(seconds)s seconds expired while running task '%(task)s."
 msgstr ""
 
 #, python-format
-msgid "Authentication failed for user '%(username)s'. [Error code: %(code)s]"
-msgstr ""
-
-msgid "You are not authorized to access Kimchi"
-msgstr ""
-
-#, python-format
-msgid "Specify %(item)s to login into Kimchi"
-msgstr ""
-
-#, python-format
 msgid "User %(user_id)s not found with given LDAP settings."
-msgstr ""
-
-#, python-format
-msgid "Invalid LDAP configuration: %(item)s : %(value)s"
 msgstr ""
 
 msgid "Unknown \"_cap\" specified"
@@ -142,8 +95,8 @@ msgstr ""
 msgid ""
 "The hypervisor doesn't have permission to use this ISO %(filename)s. "
 "Consider moving it under /var/lib/libvirt,  or set the search permission to "
-"file access control lists for '%(user)s' user if possible, or add the "
-"'%(user)s' to the ISO path group, or (not recommended) 'chmod -R o+x "
+"file access control lists for '%(user)s' user if possible, or add the '%"
+"(user)s' to the ISO path group, or (not recommended) 'chmod -R o+x "
 "'path_to_iso'.Details: %(err)s"
 msgstr ""
 
@@ -519,8 +472,8 @@ msgstr ""
 
 #, python-format
 msgid ""
-"Unable to get number of storage volumes in storage pool %(name)s. Details: "
-"%(err)s"
+"Unable to get number of storage volumes in storage pool %(name)s. Details: %"
+"(err)s"
 msgstr ""
 
 #, python-format
@@ -589,8 +542,8 @@ msgstr ""
 
 #, python-format
 msgid ""
-"%(disk)s is not a valid disk/partition. Could not add it to the pool "
-"%(pool)s."
+"%(disk)s is not a valid disk/partition. Could not add it to the pool %(pool)"
+"s."
 msgstr ""
 
 #, python-format
@@ -662,8 +615,8 @@ msgstr ""
 
 #, python-format
 msgid ""
-"Unable to create storage volume %(name)s in storage pool %(pool)s. Details: "
-"%(err)s"
+"Unable to create storage volume %(name)s in storage pool %(pool)s. Details: %"
+"(err)s"
 msgstr ""
 
 #, python-format
@@ -726,8 +679,8 @@ msgstr ""
 
 #, python-format
 msgid ""
-"Unable to clone storage volume '%(name)s' in pool '%(pool)s'. Details: "
-"%(err)s"
+"Unable to clone storage volume '%(name)s' in pool '%(pool)s'. Details: %(err)"
+"s"
 msgstr ""
 
 msgid "Specify chunk data and its size to upload a file."
@@ -820,8 +773,8 @@ msgstr ""
 
 #, python-format
 msgid ""
-"Unable to deactivate network %(name)s. There are some virtual machines "
-"%(vms)s and/or templates linked to this network."
+"Unable to deactivate network %(name)s. There are some virtual machines %(vms)"
+"s and/or templates linked to this network."
 msgstr ""
 
 #, python-format
@@ -915,26 +868,10 @@ msgid "There is no compatible package manager for this system."
 msgstr ""
 
 #, python-format
-msgid "Unable to find %(item)s in datastore"
-msgstr ""
-
-#, python-format
 msgid "Invalid URI %(uri)s"
 msgstr ""
 
-#, python-format
-msgid "Timeout while running command '%(cmd)s' after %(seconds)s seconds"
-msgstr ""
-
 msgid "Unable to choose a virtual machine name"
-msgstr ""
-
-#, python-format
-msgid "Invalid data value '%(value)s'"
-msgstr ""
-
-#, python-format
-msgid "Invalid data unit '%(unit)s'"
 msgstr ""
 
 msgid "Invalid storage type. Types supported: 'cdrom', 'disk'"
@@ -949,8 +886,8 @@ msgstr ""
 
 #, python-format
 msgid ""
-"The storage device %(dev_name)s does not exist in the virtual machine "
-"%(vm_name)s"
+"The storage device %(dev_name)s does not exist in the virtual machine %"
+"(vm_name)s"
 msgstr ""
 
 #, python-format
@@ -994,8 +931,8 @@ msgstr ""
 
 #, python-format
 msgid ""
-"Volume chosen with format %(format)s does not fit in the storage type "
-"%(type)s"
+"Volume chosen with format %(format)s does not fit in the storage type %(type)"
+"s"
 msgstr ""
 
 msgid "YUM Repository ID must be one word only string."
@@ -1113,8 +1050,8 @@ msgstr ""
 
 #, python-format
 msgid ""
-"Unable to create snapshot '%(name)s' on virtual machine '%(vm)s'. Details: "
-"%(err)s"
+"Unable to create snapshot '%(name)s' on virtual machine '%(vm)s'. Details: %"
+"(err)s"
 msgstr ""
 
 #, python-format
@@ -1133,20 +1070,20 @@ msgstr ""
 
 #, python-format
 msgid ""
-"Unable to delete snapshot '%(name)s' on virtual machine '%(vm)s'. Details: "
-"%(err)s"
+"Unable to delete snapshot '%(name)s' on virtual machine '%(vm)s'. Details: %"
+"(err)s"
 msgstr ""
 
 #, python-format
 msgid ""
-"Unable to retrieve current snapshot of virtual machine '%(vm)s'. Details: "
-"%(err)s"
+"Unable to retrieve current snapshot of virtual machine '%(vm)s'. Details: %"
+"(err)s"
 msgstr ""
 
 #, python-format
 msgid ""
-"Unable to revert virtual machine '%(vm)s' to snapshot '%(name)s'. Details: "
-"%(err)s"
+"Unable to revert virtual machine '%(vm)s' to snapshot '%(name)s'. Details: %"
+"(err)s"
 msgstr ""
 
 #, python-format
@@ -1215,6 +1152,9 @@ msgid "Create"
 msgstr ""
 
 msgid "Creating..."
+msgstr ""
+
+msgid "Cancel"
 msgstr ""
 
 msgid "Edit Guest"
@@ -1304,40 +1244,7 @@ msgstr ""
 msgid "Detach"
 msgstr ""
 
-msgid "Cancel"
-msgstr ""
-
 msgid "revert"
-msgstr ""
-
-msgid "Add a Storage Device to VM"
-msgstr ""
-
-msgid "Device Type"
-msgstr ""
-
-msgid "The device type. Currently,  \"cdrom\" and \"disk\" are supported."
-msgstr ""
-
-msgid "Storage Pool"
-msgstr ""
-
-msgid "Storage pool which volume located in"
-msgstr ""
-
-msgid "Storage Volume"
-msgstr ""
-
-msgid "Storage volume to be attached"
-msgstr ""
-
-msgid "File Path"
-msgstr ""
-
-msgid "The ISO file path in the server for CDROM."
-msgstr ""
-
-msgid "Attach"
 msgstr ""
 
 msgid "Start"
@@ -1371,6 +1278,87 @@ msgid "Shut Down"
 msgstr ""
 
 msgid "Delete"
+msgstr ""
+
+msgid "CPU"
+msgstr ""
+
+msgid "Disk I/O"
+msgstr ""
+
+msgid "Network I/O"
+msgstr ""
+
+msgid "Livetile"
+msgstr ""
+
+msgid "No guests found."
+msgstr ""
+
+msgid "Add a Storage Device to VM"
+msgstr ""
+
+msgid "Device Type"
+msgstr ""
+
+msgid "The device type. Currently,  \"cdrom\" and \"disk\" are supported."
+msgstr ""
+
+msgid "Storage Pool"
+msgstr ""
+
+msgid "Storage pool which volume located in"
+msgstr ""
+
+msgid "Storage Volume"
+msgstr ""
+
+msgid "Storage volume to be attached"
+msgstr ""
+
+msgid "File Path"
+msgstr ""
+
+msgid "The ISO file path in the server for CDROM."
+msgstr ""
+
+msgid "Attach"
+msgstr ""
+
+msgid "Shut down"
+msgstr ""
+
+msgid "Restart"
+msgstr ""
+
+msgid "Basic Information"
+msgstr ""
+
+msgid "OS Distro"
+msgstr ""
+
+msgid "OS Code Name"
+msgstr ""
+
+msgid "Processor"
+msgstr ""
+
+msgid "CPU(s)"
+msgstr ""
+
+msgid "System Statistics"
+msgstr ""
+
+msgid "Software Updates"
+msgstr ""
+
+msgid "Update Progress"
+msgstr ""
+
+msgid "Repositories"
+msgstr ""
+
+msgid "Debug Reports"
 msgstr ""
 
 msgid "The username or password you entered is incorrect. Please try again."
@@ -1490,9 +1478,6 @@ msgid ""
 "to continue?"
 msgstr ""
 
-msgid "Repositories"
-msgstr ""
-
 msgid "ID"
 msgstr ""
 
@@ -1526,9 +1511,6 @@ msgstr ""
 msgid "Disable"
 msgstr ""
 
-msgid "Software Updates"
-msgstr ""
-
 msgid "Package Name"
 msgstr ""
 
@@ -1556,9 +1538,6 @@ msgstr ""
 msgid ""
 "Debug report will be removed permanently and can't be recovered. Do you want "
 "to continue?"
-msgstr ""
-
-msgid "Debug Reports"
 msgstr ""
 
 msgid "Generated Time"
@@ -1774,34 +1753,46 @@ msgstr ""
 msgid "Disk pool or volume cannot be blank."
 msgstr ""
 
-msgid "Peers"
+msgid "Filter"
 msgstr ""
 
-msgid "Searching"
+msgid "Network Name"
 msgstr ""
 
-msgid "No peers found."
+msgid "State"
 msgstr ""
 
-msgid "Help"
+msgid "Network Type"
 msgstr ""
 
-msgid "About"
+msgid "Address Space"
 msgstr ""
 
-msgid "Log out"
+msgid "Name should not contain '/' and '\"'."
 msgstr ""
 
-msgid "Version:"
+msgid "Isolated: no external network connection"
 msgstr ""
 
-msgid "Session timeout, please re-login."
+msgid "NAT: outbound physical network connection only"
 msgstr ""
 
-msgid "User Name"
+msgid "Bridged: Virtual machines are connected to physical network directly"
 msgstr ""
 
-msgid "Password"
+msgid "(No interfaces found)"
+msgstr ""
+
+msgid "Destination"
+msgstr ""
+
+msgid "Enable VLAN"
+msgstr ""
+
+msgid "VLAN ID"
+msgstr ""
+
+msgid "Stop"
 msgstr ""
 
 msgid "Generate a New Debug Report"
@@ -1875,19 +1866,43 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-msgid "Add a Volume to Storage Pool"
+msgid "Capacity"
 msgstr ""
 
-msgid "Fetch from remote URL"
+msgid "Allocated"
 msgstr ""
 
-msgid "Enter the remote URL here."
+msgid "Location"
 msgstr ""
 
-msgid "Upload a file"
+msgid "Device path"
 msgstr ""
 
-msgid "Choose the file you want to upload."
+msgid "active"
+msgstr ""
+
+msgid "inactive"
+msgstr ""
+
+msgid "Deactivate"
+msgstr ""
+
+msgid "Activate"
+msgstr ""
+
+msgid "Add Volume"
+msgstr ""
+
+msgid "Extend"
+msgstr ""
+
+msgid "Undefine"
+msgstr ""
+
+msgid "Format"
+msgstr ""
+
+msgid "Allocation"
 msgstr ""
 
 msgid "Define a New Storage Pool"
@@ -1927,19 +1942,16 @@ msgstr ""
 msgid "The NFS exported path on NFS server."
 msgstr ""
 
-msgid "Device path"
-msgstr ""
-
 msgid "iSCSI Server"
-msgstr ""
-
-msgid "iSCSI server IP or hostname. It should not be empty."
 msgstr ""
 
 msgid "Server"
 msgstr ""
 
 msgid "Port"
+msgstr ""
+
+msgid "iSCSI server IP or hostname. It should not be empty."
 msgstr ""
 
 msgid "Target"
@@ -1954,10 +1966,31 @@ msgstr ""
 msgid "iSCSI Authentication"
 msgstr ""
 
+msgid "User Name"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
 msgid "SCSI Adapter"
 msgstr ""
 
 msgid "Please, wait..."
+msgstr ""
+
+msgid "Add a Volume to Storage Pool"
+msgstr ""
+
+msgid "Fetch from remote URL"
+msgstr ""
+
+msgid "Enter the remote URL here."
+msgstr ""
+
+msgid "Upload a file"
+msgstr ""
+
+msgid "Choose the file you want to upload."
 msgstr ""
 
 msgid "Add Template"
@@ -2011,9 +2044,6 @@ msgstr ""
 msgid "Edit Template"
 msgstr ""
 
-msgid "Processor"
-msgstr ""
-
 msgid "CDROM"
 msgstr ""
 
@@ -2039,123 +2069,6 @@ msgid "Cores"
 msgstr ""
 
 msgid "Threads"
-msgstr ""
-
-msgid "CPU"
-msgstr ""
-
-msgid "Disk I/O"
-msgstr ""
-
-msgid "Network I/O"
-msgstr ""
-
-msgid "Livetile"
-msgstr ""
-
-msgid "No guests found."
-msgstr ""
-
-msgid "Shut down"
-msgstr ""
-
-msgid "Restart"
-msgstr ""
-
-msgid "Basic Information"
-msgstr ""
-
-msgid "OS Distro"
-msgstr ""
-
-msgid "OS Code Name"
-msgstr ""
-
-msgid "CPU(s)"
-msgstr ""
-
-msgid "System Statistics"
-msgstr ""
-
-msgid "Update Progress"
-msgstr ""
-
-msgid "Network Name"
-msgstr ""
-
-msgid "State"
-msgstr ""
-
-msgid "Network Type"
-msgstr ""
-
-msgid "Address Space"
-msgstr ""
-
-msgid "Name should not contain '/' and '\"'."
-msgstr ""
-
-msgid "Isolated: no external network connection"
-msgstr ""
-
-msgid "NAT: outbound physical network connection only"
-msgstr ""
-
-msgid "Bridged: Virtual machines are connected to physical network directly"
-msgstr ""
-
-msgid "(No interfaces found)"
-msgstr ""
-
-msgid "Destination"
-msgstr ""
-
-msgid "Enable VLAN"
-msgstr ""
-
-msgid "VLAN ID"
-msgstr ""
-
-msgid "Stop"
-msgstr ""
-
-msgid "%Used"
-msgstr ""
-
-msgid "Location"
-msgstr ""
-
-msgid "Capacity"
-msgstr ""
-
-msgid "Allocated"
-msgstr ""
-
-msgid "active"
-msgstr ""
-
-msgid "inactive"
-msgstr ""
-
-msgid "Deactivate"
-msgstr ""
-
-msgid "Activate"
-msgstr ""
-
-msgid "Add Volume"
-msgstr ""
-
-msgid "Extend"
-msgstr ""
-
-msgid "Undefine"
-msgstr ""
-
-msgid "Format"
-msgstr ""
-
-msgid "Allocation"
 msgstr ""
 
 msgid "No templates found."
