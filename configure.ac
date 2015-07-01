@@ -106,6 +106,9 @@ AC_CONFIG_FILES([
     plugins/sample/ui/pages/Makefile
     ui/Makefile
     ui/css/Makefile
+    ui/fontello/Makefile
+    ui/fontello/css/Makefile
+    ui/fontello/font/Makefile
     ui/images/Makefile
     ui/images/theme-default/Makefile
     ui/js/Makefile
