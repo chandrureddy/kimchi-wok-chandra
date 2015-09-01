@@ -1,0 +1,154 @@
+#
+# Project Kimchi
+#
+# Copyright IBM, Corp. 2014-2015
+#
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+#
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
+
+import unittest
+from cherrypy.lib.reprconf import Parser
+from wok.config import Paths
+
+from wok.plugins.gingerbase.config import KimchiPaths
+
+
+
+get_prefix = None
+
+
+def setUpModule():
+    global get_prefix
+    get_prefix = Paths.get_prefix
+
+
+def tearDownModule():
+    Paths.get_prefix = KimchiPaths.get_prefix = get_prefix
+
+
+class ConfigTests(unittest.TestCase):
+    def assertInstalledPath(self, actual, expected):
+        if '@pkgdatadir@' != '/usr/share/gingerbase':
+            usr_local = '/usr/local'
+            if not expected.startswith('/usr'):
+                expected = usr_local + expected
+        self.assertEquals(actual, expected)
+
+    def test_installed_paths(self):
+        Paths.get_prefix = lambda self: '@datadir@/wok'
+        paths = Paths()
+        self.assertInstalledPath(paths.state_dir, '/var/lib/wok')
+        self.assertInstalledPath(paths.log_dir, '/var/log/wok')
+        self.assertInstalledPath(paths.conf_dir, '/etc/wok')
+        self.assertInstalledPath(paths.src_dir, '@wokdir@')
+        self.assertInstalledPath(paths.plugins_dir, '@wokdir@/plugins')
+        self.assertInstalledPath(paths.ui_dir, '@datadir@/wok/ui')
+        self.assertInstalledPath(paths.mo_dir, '@prefix@/share/locale')
+
+    def test_uninstalled_paths(self):
+        Paths.get_prefix = lambda self: '/home/user/wok'
+        paths = Paths()
+        self.assertEquals(paths.state_dir, '/home/user/wok/data')
+        self.assertEquals(paths.log_dir, '/home/user/wok/log')
+        self.assertEquals(paths.conf_dir, '/home/user/wok/src')
+        self.assertEquals(paths.src_dir, '/home/user/wok/src/wok')
+        self.assertEquals(paths.plugins_dir, '/home/user/wok/plugins')
+        self.assertEquals(paths.ui_dir, '/home/user/wok/ui')
+        self.assertEquals(paths.mo_dir, '/home/user/wok/mo')
+
+    def test_installed_plugin_paths(self):
+        KimchiPaths.get_prefix = lambda self: '@datadir@/wok'
+        paths = KimchiPaths()
+        self.assertInstalledPath(paths.conf_dir, '/etc/wok/plugins.d')
+        self.assertInstalledPath(paths.conf_file,
+                                 '/etc/wok/plugins.d/gingerbase.conf')
+        self.assertInstalledPath(paths.src_dir, '@wokdir@/plugins/ginger-base')
+        self.assertInstalledPath(paths.ui_dir,
+                                 '@datadir@/wok/plugins/gingerbase/ui')
+        self.assertInstalledPath(paths.mo_dir, '@prefix@/share/locale')
+
+    def test_uninstalled_plugin_paths(self):
+        KimchiPaths.get_prefix = lambda self: '/home/user/wok'
+        paths = KimchiPaths()
+        self.assertEquals(paths.conf_dir, '/home/user/wok/plugins/gingerbase')
+        self.assertEquals(
+            paths.conf_file, '/home/user/wok/plugins/gingerbase/gingerbase.conf')
+        self.assertEquals(paths.src_dir, '/home/user/wok/plugins/gingerbase')
+        self.assertEquals(paths.ui_dir, '/home/user/wok/plugins/gingerbase/ui')
+        self.assertEquals(paths.mo_dir, '/home/user/wok/plugins/gingerbase/mo')
+
+    def test_kimchi_config(self):
+        Paths.get_prefix = KimchiPaths.get_prefix = get_prefix
+        CACHEEXPIRES = 31536000
+        SESSIONSTIMEOUT = 10
+        configObj = {
+            '/': {
+                'tools.trailing_slash.on': False,
+                'request.methods_with_bodies': ('POST', 'PUT'),
+                'tools.nocache.on': True,
+                'tools.proxy.on': True,
+                'tools.sessions.on': True,
+                'tools.sessions.name': 'wok',
+                'tools.sessions.secure': True,
+                'tools.sessions.httponly': True,
+                'tools.sessions.locking': 'explicit',
+                'tools.sessions.storage_type': 'ram',
+                'tools.sessions.timeout': SESSIONSTIMEOUT,
+                'tools.wokauth.on': False
+            },
+            '/css': {
+                'tools.staticdir.on': True,
+                'tools.staticdir.dir': '%s/ui/css' % KimchiPaths().prefix,
+                'tools.expires.on': True,
+                'tools.expires.secs': CACHEEXPIRES,
+                'tools.nocache.on': False
+            },
+            '/js': {
+                'tools.staticdir.on': True,
+                'tools.staticdir.dir': '%s/ui/js' % KimchiPaths().prefix,
+                'tools.expires.on': True,
+                'tools.expires.secs': CACHEEXPIRES,
+                'tools.nocache.on': False
+            },
+            '/libs': {
+                'tools.staticdir.on': True,
+                'tools.staticdir.dir': '%s/ui/libs' % KimchiPaths().prefix,
+                'tools.expires.on': True,
+                'tools.expires.secs': CACHEEXPIRES,
+                'tools.nocache.on': False,
+            },
+            '/images': {
+                'tools.staticdir.on': True,
+                'tools.staticdir.dir': '%s/ui/images' % KimchiPaths().prefix,
+                'tools.nocache.on': False
+            },
+            '/favicon.ico': {
+                'tools.staticfile.on': True,
+                'tools.staticfile.filename':
+                '%s/images/logo.ico' % KimchiPaths().ui_dir
+            },
+            '/robots.txt': {
+                'tools.staticfile.on': True,
+                'tools.staticfile.filename': '%s/robots.txt' % KimchiPaths().ui_dir
+            },
+            '/help': {
+                'tools.staticdir.on': True,
+                'tools.staticdir.dir': '%s/ui/pages/help' % KimchiPaths().prefix,
+                'tools.staticdir.index': 'en_US/index.html',
+                'tools.nocache.on': True
+            }
+        }
+
+        kimchi_config = Parser().dict_from_file(KimchiPaths().conf_file)
+        self.assertEquals(kimchi_config, configObj)
