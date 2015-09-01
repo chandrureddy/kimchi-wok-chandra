@@ -29,7 +29,7 @@ kimchi.report_add_main = function() {
         var reportName = nameTextbox.val();
         var validator = RegExp("^[_A-Za-z0-9-]*$");
         if (!validator.test(reportName)) {
-            wok.message.error.code('KCHDR6011M');
+            wok.message.error.code('GGBDR6011M');
             return false;
         }
         var formData = addReportForm.serializeObject();

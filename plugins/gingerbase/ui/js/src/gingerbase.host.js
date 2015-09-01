@@ -30,27 +30,27 @@ kimchi.host_main = function() {
         if (repo_type == "yum") {
                 gridFields=[{
                     name: 'repo_id',
-                    label: i18n['KCHREPO6004M'],
+                    label: i18n['GGBREPO6004M'],
                     'class': 'repository-id'
                 }, {
                     name: 'config[repo_name]',
-                    label: i18n['KCHREPO6005M'],
+                    label: i18n['GGBREPO6005M'],
                     'class': 'repository-name'
                 }, {
                     name: 'enabled',
-                    label: i18n['KCHREPO6009M'],
+                    label: i18n['GGBREPO6009M'],
                     'class': 'repository-enabled'
                 }];
         }
         else if (repo_type == "deb") {
                 gridFields=[{
                     name: 'baseurl',
-                    label: i18n['KCHREPO6006M'],
+                    label: i18n['GGBREPO6006M'],
                     makeTitle: true,
                     'class': 'repository-baseurl deb'
                 }, {
                     name: 'enabled',
-                    label: i18n['KCHREPO6009M'],
+                    label: i18n['GGBREPO6009M'],
                     'class': 'repository-enabled deb'
                 }, {
                     name: 'config[dist]',
@@ -65,15 +65,15 @@ kimchi.host_main = function() {
         else {
             gridFields=[{
                 name: 'repo_id',
-                label: i18n['KCHREPO6004M'],
+                label: i18n['GGBREPO6004M'],
                 'class': 'repository-id'
                 }, {
                     name: 'enabled',
-                    label: i18n['KCHREPO6009M'],
+                    label: i18n['GGBREPO6009M'],
                     'class': 'repository-enabled'
                 }, {
                     name: 'baseurl',
-                    label: i18n['KCHREPO6006M'],
+                    label: i18n['GGBREPO6006M'],
                     makeTitle: true,
                     'class': 'repository-baseurl'
                 }];
@@ -81,17 +81,17 @@ kimchi.host_main = function() {
         repositoriesGrid = new kimchi.widget.Grid({
             container: 'repositories-grid-container',
             id: 'repositories-grid',
-            title: i18n['KCHREPO6003M'],
+            title: i18n['GGBREPO6003M'],
             toolbarButtons: [{
                 id: 'repositories-grid-add-button',
-                label: i18n['KCHREPO6012M'],
+                label: i18n['GGBREPO6012M'],
                 onClick: function(event) {
-                    wok.window.open({url:'plugins/kimchi/repository-add.html',
+                    wok.window.open({url:'plugins/gingerbase/repository-add.html',
                                     class: repo_type});
                 }
             }, {
                 id: 'repositories-grid-enable-button',
-                label: i18n['KCHREPO6016M'],
+                label: i18n['GGBREPO6016M'],
                 disabled: true,
                 onClick: function(event) {
                     var repository = repositoriesGrid.getSelected();
@@ -107,7 +107,7 @@ kimchi.host_main = function() {
                 }
             }, {
                 id: 'repositories-grid-edit-button',
-                label: i18n['KCHREPO6013M'],
+                label: i18n['GGBREPO6013M'],
                 disabled: true,
                 onClick: function(event) {
                     var repository = repositoriesGrid.getSelected();
@@ -115,12 +115,12 @@ kimchi.host_main = function() {
                         return;
                     }
                     kimchi.selectedRepository = repository['repo_id'];
-                    wok.window.open({url:'plugins/kimchi/repository-edit.html',
+                    wok.window.open({url:'plugins/gingerbase/repository-edit.html',
                                     class: repo_type});
                 }
             }, {
                 id: 'repositories-grid-remove-button',
-                label: i18n['KCHREPO6014M'],
+                label: i18n['GGBREPO6014M'],
                 disabled: true,
                 onClick: function(event) {
                     var repository = repositoriesGrid.getSelected();
@@ -129,10 +129,10 @@ kimchi.host_main = function() {
                     }
 
                     var settings = {
-                        title : i18n['KCHREPO6001M'],
-                        content : i18n['KCHREPO6002M'],
-                        confirm : i18n['KCHAPI6004M'],
-                        cancel : i18n['KCHAPI6003M']
+                        title : i18n['GGBREPO6001M'],
+                        content : i18n['GGBREPO6002M'],
+                        confirm : i18n['GGBAPI6004M'],
+                        cancel : i18n['GGBAPI6003M']
                     };
 
                     wok.confirm(settings, function() {
@@ -155,7 +155,7 @@ kimchi.host_main = function() {
                 $('#repositories-grid-edit-button').prop('disabled', false);
                 var enabled = repository['enabled'];
                 $('#repositories-grid-enable-button')
-                    .text(i18n[enabled ? 'KCHREPO6017M' : 'KCHREPO6016M'])
+                    .text(i18n[enabled ? 'GGBREPO6017M' : 'GGBREPO6016M'])
                     .prop('disabled', false);
             },
             frozenFields: [],
@@ -186,7 +186,7 @@ kimchi.host_main = function() {
                 gridCallback([]);
             }
             repositoriesGrid &&
-                repositoriesGrid.showMessage(message || i18n['KCHUPD6008M']);
+                repositoriesGrid.showMessage(message || i18n['GGBUPD6008M']);
         });
 
         $('#repositories-grid-remove-button').prop('disabled', true);
@@ -208,11 +208,11 @@ kimchi.host_main = function() {
         softwareUpdatesGrid = new kimchi.widget.Grid({
             container: 'software-updates-grid-container',
             id: softwareUpdatesGridID,
-            title: i18n['KCHUPD6001M'],
+            title: i18n['GGBUPD6001M'],
             rowSelection: 'disabled',
             toolbarButtons: [{
                 id: softwareUpdatesGridID + '-update-button',
-                label: i18n['KCHUPD6006M'],
+                label: i18n['GGBUPD6006M'],
                 disabled: true,
                 onClick: function(event) {
                     var updateButton = $(this);
@@ -221,37 +221,37 @@ kimchi.host_main = function() {
                     $(progressArea).text('');
                     !wok.isElementInViewport(progressArea) &&
                         progressArea.scrollIntoView();
-                    $(updateButton).text(i18n['KCHUPD6007M']).prop('disabled', true);
+                    $(updateButton).text(i18n['GGBUPD6007M']).prop('disabled', true);
 
                     kimchi.updateSoftware(function(result) {
                         reloadProgressArea(result);
-                        $(updateButton).text(i18n['KCHUPD6006M']).prop('disabled', false);
+                        $(updateButton).text(i18n['GGBUPD6006M']).prop('disabled', false);
                         wok.topic('kimchi/softwareUpdated').publish({
                             result: result
                         });
                     }, function(error) {
                         var message = error && error['responseJSON'] && error['responseJSON']['reason'];
-                        wok.message.error(message || i18n['KCHUPD6009M']);
-                        $(updateButton).text(i18n['KCHUPD6006M']).prop('disabled', false);
+                        wok.message.error(message || i18n['GGBUPD6009M']);
+                        $(updateButton).text(i18n['GGBUPD6006M']).prop('disabled', false);
                     }, reloadProgressArea);
                 }
             }],
             frozenFields: [],
             fields: [{
                 name: 'package_name',
-                label: i18n['KCHUPD6002M'],
+                label: i18n['GGBUPD6002M'],
                 'class': 'software-update-name'
             }, {
                 name: 'version',
-                label: i18n['KCHUPD6003M'],
+                label: i18n['GGBUPD6003M'],
                 'class': 'software-update-version'
             }, {
                 name: 'arch',
-                label: i18n['KCHUPD6004M'],
+                label: i18n['GGBUPD6004M'],
                 'class': 'software-update-arch'
             }, {
                 name: 'repository',
-                label: i18n['KCHUPD6005M'],
+                label: i18n['GGBUPD6005M'],
                 'class': 'software-update-repos'
             }],
             data: listSoftwareUpdates
@@ -280,7 +280,7 @@ kimchi.host_main = function() {
                 gridCallback([]);
             }
             softwareUpdatesGrid &&
-                softwareUpdatesGrid.showMessage(message || i18n['KCHUPD6008M']);
+                softwareUpdatesGrid.showMessage(message || i18n['GGBUPD6008M']);
         });
     };
 
@@ -299,16 +299,16 @@ kimchi.host_main = function() {
         reportGrid = new kimchi.widget.Grid({
             container: 'available-reports-grid-container',
             id: reportGridID,
-            title: i18n['KCHDR6002M'],
+            title: i18n['GGBDR6002M'],
             toolbarButtons: [{
                 id: reportGridID + '-generate-button',
-                label: i18n['KCHDR6006M'],
+                label: i18n['GGBDR6006M'],
                 onClick: function(event) {
-                    wok.window.open('plugins/kimchi/report-add.html');
+                    wok.window.open('plugins/gingerbase/report-add.html');
                 }
             }, {
                 id: reportGridID + '-rename-button',
-                label: i18n['KCHDR6008M'],
+                label: i18n['GGBDR6008M'],
                 disabled: true,
                 onClick: function(event) {
                     var report = reportGrid.getSelected();
@@ -317,11 +317,11 @@ kimchi.host_main = function() {
                     }
 
                     kimchi.selectedReport = report['name'];
-                    wok.window.open('plugins/kimchi/report-rename.html');
+                    wok.window.open('plugins/gingerbase/report-rename.html');
                 }
             }, {
                 id: reportGridID + '-remove-button',
-                label: i18n['KCHDR6009M'],
+                label: i18n['GGBDR6009M'],
                 disabled: true,
                 onClick: function(event) {
                     var report = reportGrid.getSelected();
@@ -330,10 +330,10 @@ kimchi.host_main = function() {
                     }
 
                     var settings = {
-                        title : i18n['KCHAPI6004M'],
-                        content : i18n['KCHDR6001M'],
-                        confirm : i18n['KCHAPI6002M'],
-                        cancel : i18n['KCHAPI6003M']
+                        title : i18n['GGBAPI6004M'],
+                        content : i18n['GGBDR6001M'],
+                        confirm : i18n['GGBAPI6002M'],
+                        cancel : i18n['GGBAPI6003M']
                     };
 
                     wok.confirm(settings, function() {
@@ -348,7 +348,7 @@ kimchi.host_main = function() {
                 }
             }, {
                 id: reportGridID + '-download-button',
-                label: i18n['KCHDR6010M'],
+                label: i18n['GGBDR6010M'],
                 disabled: true,
                 onClick: function(event) {
                     var report = reportGrid.getSelected();
@@ -365,7 +365,7 @@ kimchi.host_main = function() {
                 var report = reportGrid.getSelected();
                 // Only enable report buttons if the selected line is not a
                 // pending report
-                if (report['time'] == i18n['KCHDR6007M']) {
+                if (report['time'] == i18n['GGBDR6007M']) {
                     var gridElement = $('#'+ reportGridID);
                     var row = $('tr:contains(' + report['name'] + ')', gridElement);
                     enableReportButtons(false);
@@ -378,11 +378,11 @@ kimchi.host_main = function() {
             frozenFields: [],
             fields: [{
                 name: 'name',
-                label: i18n['KCHDR6003M'],
+                label: i18n['GGBDR6003M'],
                 'class': 'debug-report-name'
             }, {
                 name: 'time',
-                label: i18n['KCHDR6005M'],
+                label: i18n['GGBDR6005M'],
                 'class': 'debug-report-time'
             }],
             data: reports
@@ -391,12 +391,12 @@ kimchi.host_main = function() {
 
     var getPendingReports = function() {
         var reports = []
-        var filter = 'status=running&target_uri=' + encodeURIComponent('^/plugins/kimchi/debugreports/*')
+        var filter = 'status=running&target_uri=' + encodeURIComponent('^/plugins/gingerbase/debugreports/*')
 
         kimchi.getTasksByFilter(filter, function(tasks) {
             for(var i = 0; i < tasks.length; i++) {
-                reportName = tasks[i].target_uri.replace(/^\/plugins\/kimchi\/debugreports\//, '') || i18n['KCHDR6012M'];
-                reports.push({'name': reportName, 'time': i18n['KCHDR6007M']})
+                reportName = tasks[i].target_uri.replace(/^\/plugins\/gingerbase\/debugreports\//, '') || i18n['GGBDR6012M'];
+                reports.push({'name': reportName, 'time': i18n['GGBDR6007M']})
 
                 if(kimchi.trackingTasks.indexOf(tasks[i].id) >= 0) {
                     continue;
@@ -441,7 +441,7 @@ kimchi.host_main = function() {
             // Set id-debug-img to pending reports
             // It will display a loading icon
             var gridElement = $('#' + reportGridID);
-                $.each($('td:contains(' + i18n['KCHDR6007M']  + ')', gridElement), function(index, row) {
+                $.each($('td:contains(' + i18n['GGBDR6007M']  + ')', gridElement), function(index, row) {
                 $(row).parent().addClass('no-hover');
                 $(row).attr('id', 'id-debug-img');
             });
@@ -458,10 +458,10 @@ kimchi.host_main = function() {
     var restartButtonID = '#host-button-restart';
     var shutdownHost = function(params) {
         var settings = {
-            title : i18n['KCHAPI6004M'],
-            content : i18n['KCHHOST6008M'],
-            confirm : i18n['KCHAPI6002M'],
-            cancel : i18n['KCHAPI6003M']
+            title : i18n['GGBAPI6004M'],
+            content : i18n['GGBHOST6008M'],
+            confirm : i18n['GGBAPI6002M'],
+            cancel : i18n['GGBAPI6003M']
         };
 
         wok.confirm(settings, function() {
@@ -469,17 +469,18 @@ kimchi.host_main = function() {
             $(shutdownButtonID).prop('disabled', true);
             $(restartButtonID).prop('disabled', true);
             // Check if there is any VM is running.
-            kimchi.listVMs(function(vms) {
-                for(var i = 0; i < vms.length; i++) {
-                    if(vms[i]['state'] === 'running') {
-                        wok.message.error.code('KCHHOST6001E');
-                        $(shutdownButtonID).prop('disabled', false);
-                        $(restartButtonID).prop('disabled', false);
-                        return;
-                    }
-                }
-
-            });
+            // FIXME : Find alternative way to figure out if any vms running
+            // kimchi.listVMs(function(vms) {
+            //     for(var i = 0; i < vms.length; i++) {
+            //         if(vms[i]['state'] === 'running') {
+            //             wok.message.error.code('GGBHOST6001E');
+            //             $(shutdownButtonID).prop('disabled', false);
+            //             $(restartButtonID).prop('disabled', false);
+            //             return;
+            //         }
+            //     }
+            //
+            // });
         }, function() {
         });
     };
@@ -562,7 +563,7 @@ kimchi.host_main = function() {
             cpu: {
                 u: {
                     type: 'percent',
-                    legend: i18n['KCHHOST6002M'],
+                    legend: i18n['GGBHOST6002M'],
                     points: []
                 }
             },
@@ -571,7 +572,7 @@ kimchi.host_main = function() {
                     type: 'value',
                     base: 2,
                     fixed: 2,
-                    legend: i18n['KCHHOST6003M'],
+                    legend: i18n['GGBHOST6003M'],
                     points: []
                 }
             },
@@ -581,7 +582,7 @@ kimchi.host_main = function() {
                     base: 2,
                     fixed: 2,
                     unit: 'B/s',
-                    legend: i18n['KCHHOST6004M'],
+                    legend: i18n['GGBHOST6004M'],
                     points: []
                 },
                 w: {
@@ -589,7 +590,7 @@ kimchi.host_main = function() {
                     base: 2,
                     fixed: 2,
                     unit: 'B/s',
-                    legend: i18n['KCHHOST6005M'],
+                    legend: i18n['GGBHOST6005M'],
                     'class': 'disk-write',
                     points: []
                 }
@@ -600,7 +601,7 @@ kimchi.host_main = function() {
                     base: 2,
                     fixed: 2,
                     unit: 'B/s',
-                    legend: i18n['KCHHOST6006M'],
+                    legend: i18n['GGBHOST6006M'],
                     points: []
                 },
                 s: {
@@ -608,7 +609,7 @@ kimchi.host_main = function() {
                     base: 2,
                     fixed: 2,
                     unit: 'B/s',
-                    legend: i18n['KCHHOST6007M'],
+                    legend: i18n['GGBHOST6007M'],
                     'class': 'network-sent',
                     points: []
                 }
