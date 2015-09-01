@@ -99,7 +99,7 @@ class SoftwareUpdate(object):
         Return a dictionary with all info from a given package name.
         """
         if name not in self._packages.keys():
-            raise NotFoundError('KCHPKGUPD0002E', {'name': name})
+            raise NotFoundError('GGBPKGUPD0002E', {'name': name})
 
         return self._packages[name]
 
@@ -155,7 +155,7 @@ class YumUpdate(object):
             kimchiLock.acquire()
             self._pkgs = get_yum_packages_list_update()
         except Exception, e:
-            raise OperationFailed('KCHPKGUPD0003E', {'err': str(e)})
+            raise OperationFailed('GGBPKGUPD0003E', {'err': str(e)})
         finally:
             kimchiLock.release()
 
@@ -198,7 +198,7 @@ class AptUpdate(object):
                 self._pkgs = apt_cache.get_changes()
         except Exception, e:
             kimchiLock.release()
-            raise OperationFailed('KCHPKGUPD0003E', {'err': e.message})
+            raise OperationFailed('GGBPKGUPD0003E', {'err': e.message})
 
     def getPackagesList(self):
         """
@@ -241,7 +241,7 @@ class ZypperUpdate(object):
         (stdout, stderr, returncode) = run_command(cmd)
 
         if len(stderr) > 0:
-            raise OperationFailed('KCHPKGUPD0003E', {'err': stderr})
+            raise OperationFailed('GGBPKGUPD0003E', {'err': stderr})
 
         for line in stdout.split('\n'):
             if line.find('v |') >= 0:

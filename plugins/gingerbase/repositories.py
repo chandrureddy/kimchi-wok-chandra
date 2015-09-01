@@ -47,7 +47,7 @@ class Repositories(object):
                 __import__('apt_pkg')
                 self._pkg_mnger = AptRepo()
             except ImportError:
-                raise InvalidOperation('KCHREPOS0014E')
+                raise InvalidOperation('GGBREPOS0014E')
 
     def addRepository(self, params):
         """
@@ -57,7 +57,7 @@ class Repositories(object):
         extra_keys = list(
             set(config.keys()).difference(set(self._pkg_mnger.CONFIG_ENTRY)))
         if len(extra_keys) > 0:
-            raise InvalidParameter("KCHREPOS0028E",
+            raise InvalidParameter("GGBREPOS0028E",
                                    {'items': ",".join(extra_keys)})
 
         return self._pkg_mnger.addRepo(params)
@@ -134,7 +134,7 @@ class YumRepo(object):
         """
         Return a list of repositories IDs
         """
-        repos = self._get_repos('KCHREPOS0024E')
+        repos = self._get_repos('GGBREPOS0024E')
         return repos.keys()
 
     def getRepo(self, repo_id):
@@ -142,10 +142,10 @@ class YumRepo(object):
         Return a dictionary in the repositories.Repositories() of the given
         repository ID format with the information of a YumRepository object.
         """
-        repos = self._get_repos('KCHREPOS0025E')
+        repos = self._get_repos('GGBREPOS0025E')
 
         if repo_id not in repos.keys():
-            raise NotFoundError("KCHREPOS0012E", {'repo_id': repo_id})
+            raise NotFoundError("GGBREPOS0012E", {'repo_id': repo_id})
 
         entry = repos.get(repo_id)
 
@@ -171,7 +171,7 @@ class YumRepo(object):
         mirrorlist = config.get('mirrorlist', '')
         metalink = config.get('metalink', '')
         if not baseurl and not mirrorlist and not metalink:
-            raise MissingParameter("KCHREPOS0013E")
+            raise MissingParameter("GGBREPOS0013E")
 
         if baseurl:
             validate_repo_url(baseurl)
@@ -183,15 +183,15 @@ class YumRepo(object):
             validate_repo_url(metalink)
 
         if mirrorlist and metalink:
-            raise InvalidOperation('KCHREPOS0030E')
+            raise InvalidOperation('GGBREPOS0030E')
 
         repo_id = params.get('repo_id', None)
         if repo_id is None:
             repo_id = "kimchi_repo_%s" % str(int(time.time() * 1000))
 
-        repos = self._get_repos('KCHREPOS0026E')
+        repos = self._get_repos('GGBREPOS0026E')
         if repo_id in repos.keys():
-            raise InvalidOperation("KCHREPOS0022E", {'repo_id': repo_id})
+            raise InvalidOperation("GGBREPOS0022E", {'repo_id': repo_id})
 
         repo_name = config.get('repo_name', repo_id)
         repo = {'baseurl': baseurl, 'mirrorlist': mirrorlist,
@@ -211,22 +211,22 @@ class YumRepo(object):
             with open(repofile, 'w') as fd:
                 parser.write(fd)
         except:
-            raise OperationFailed("KCHREPOS0018E",
+            raise OperationFailed("GGBREPOS0018E",
                                   {'repo_file': repofile})
 
         return repo_id
 
     def toggleRepo(self, repo_id, enable):
-        repos = self._get_repos('KCHREPOS0011E')
+        repos = self._get_repos('GGBREPOS0011E')
         if repo_id not in repos.keys():
-            raise NotFoundError("KCHREPOS0012E", {'repo_id': repo_id})
+            raise NotFoundError("GGBREPOS0012E", {'repo_id': repo_id})
 
         entry = repos.get(repo_id)
         if enable and entry.enabled:
-            raise InvalidOperation("KCHREPOS0015E", {'repo_id': repo_id})
+            raise InvalidOperation("GGBREPOS0015E", {'repo_id': repo_id})
 
         if not enable and not entry.enabled:
-            raise InvalidOperation("KCHREPOS0016E", {'repo_id': repo_id})
+            raise InvalidOperation("GGBREPOS0016E", {'repo_id': repo_id})
 
         kimchiLock.acquire()
         try:
@@ -238,9 +238,9 @@ class YumRepo(object):
             write_repo_to_file(entry)
         except:
             if enable:
-                raise OperationFailed("KCHREPOS0020E", {'repo_id': repo_id})
+                raise OperationFailed("GGBREPOS0020E", {'repo_id': repo_id})
 
-            raise OperationFailed("KCHREPOS0021E", {'repo_id': repo_id})
+            raise OperationFailed("GGBREPOS0021E", {'repo_id': repo_id})
         finally:
             kimchiLock.release()
 
@@ -250,9 +250,9 @@ class YumRepo(object):
         """
         Update a given repository in repositories.Repositories() format
         """
-        repos = self._get_repos('KCHREPOS0011E')
+        repos = self._get_repos('GGBREPOS0011E')
         if repo_id not in repos.keys():
-            raise NotFoundError("KCHREPOS0012E", {'repo_id': repo_id})
+            raise NotFoundError("GGBREPOS0012E", {'repo_id': repo_id})
 
         entry = repos.get(repo_id)
 
@@ -271,7 +271,7 @@ class YumRepo(object):
             metalink = None
 
         if baseurl is None and mirrorlist is None and metalink is None:
-            raise MissingParameter("KCHREPOS0013E")
+            raise MissingParameter("GGBREPOS0013E")
 
         if baseurl is not None:
             validate_repo_url(baseurl)
@@ -286,7 +286,7 @@ class YumRepo(object):
             entry.metalink = metalink
 
         if mirrorlist and metalink:
-            raise InvalidOperation('KCHREPOS0030E')
+            raise InvalidOperation('GGBREPOS0030E')
 
         entry.id = params.get('repo_id', repo_id)
         entry.name = config.get('repo_name', entry.name)
@@ -301,9 +301,9 @@ class YumRepo(object):
         """
         Remove a given repository
         """
-        repos = self._get_repos('KCHREPOS0027E')
+        repos = self._get_repos('GGBREPOS0027E')
         if repo_id not in repos.keys():
-            raise NotFoundError("KCHREPOS0012E", {'repo_id': repo_id})
+            raise NotFoundError("GGBREPOS0012E", {'repo_id': repo_id})
 
         entry = repos.get(repo_id)
         parser = ConfigParser()
@@ -353,7 +353,7 @@ class AptRepo(object):
                 repos.refresh()
         except Exception, e:
             kimchiLock.release()
-            raise OperationFailed('KCHREPOS0025E', {'err': e.message})
+            raise OperationFailed('GGBREPOS0025E', {'err': e.message})
 
         return repos
 
@@ -408,7 +408,7 @@ class AptRepo(object):
         """
         r = self._get_source_entry(repo_id)
         if r is None:
-            raise NotFoundError("KCHREPOS0012E", {'repo_id': repo_id})
+            raise NotFoundError("GGBREPOS0012E", {'repo_id': repo_id})
 
         info = {'enabled': not r.disabled,
                 'baseurl': r.uri,
@@ -424,10 +424,10 @@ class AptRepo(object):
         # (in addition to baseurl, verified on controller through API.json)
         config = params.get('config', None)
         if config is None:
-            raise MissingParameter("KCHREPOS0019E")
+            raise MissingParameter("GGBREPOS0019E")
 
         if 'dist' not in config.keys():
-            raise MissingParameter("KCHREPOS0019E")
+            raise MissingParameter("GGBREPOS0019E")
 
         uri = params['baseurl']
         dist = config['dist']
@@ -444,7 +444,7 @@ class AptRepo(object):
                 repos.save()
         except Exception as e:
             kimchiLock.release()
-            raise OperationFailed("KCHREPOS0026E", {'err': e.message})
+            raise OperationFailed("GGBREPOS0026E", {'err': e.message})
         kimchiLock.release()
         return self._get_repo_id(source_entry)
 
@@ -454,13 +454,13 @@ class AptRepo(object):
         """
         r = self._get_source_entry(repo_id)
         if r is None:
-            raise NotFoundError("KCHREPOS0012E", {'repo_id': repo_id})
+            raise NotFoundError("GGBREPOS0012E", {'repo_id': repo_id})
 
         if enable and not r.disabled:
-            raise InvalidOperation("KCHREPOS0015E", {'repo_id': repo_id})
+            raise InvalidOperation("GGBREPOS0015E", {'repo_id': repo_id})
 
         if not enable and r.disabled:
-            raise InvalidOperation("KCHREPOS0016E", {'repo_id': repo_id})
+            raise InvalidOperation("GGBREPOS0016E", {'repo_id': repo_id})
 
         if enable:
             line = 'deb'
@@ -477,9 +477,9 @@ class AptRepo(object):
         except:
             kimchiLock.release()
             if enable:
-                raise OperationFailed("KCHREPOS0020E", {'repo_id': repo_id})
+                raise OperationFailed("GGBREPOS0020E", {'repo_id': repo_id})
 
-            raise OperationFailed("KCHREPOS0021E", {'repo_id': repo_id})
+            raise OperationFailed("GGBREPOS0021E", {'repo_id': repo_id})
         finally:
             kimchiLock.release()
 
@@ -514,7 +514,7 @@ class AptRepo(object):
         """
         r = self._get_source_entry(repo_id)
         if r is None:
-            raise NotFoundError("KCHREPOS0012E", {'repo_id': repo_id})
+            raise NotFoundError("GGBREPOS0012E", {'repo_id': repo_id})
 
         kimchiLock.acquire()
         try:
@@ -524,6 +524,6 @@ class AptRepo(object):
                 repos.save()
         except:
             kimchiLock.release()
-            raise OperationFailed("KCHREPOS0017E", {'repo_id': repo_id})
+            raise OperationFailed("GGBREPOS0017E", {'repo_id': repo_id})
         finally:
             kimchiLock.release()
