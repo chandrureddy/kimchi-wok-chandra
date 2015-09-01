@@ -98,7 +98,6 @@ config.py: config.py.in Makefile
 
 install-deb: install
 	cp -R $(top_srcdir)/contrib/DEBIAN $(DESTDIR)/
-	mkdir -p $(DESTDIR)/var/lib/kimchi/debugreports
 	mkdir -p $(DESTDIR)/var/lib/kimchi/screenshots
 	mkdir -p $(DESTDIR)/var/lib/kimchi/isos
 
@@ -138,7 +137,7 @@ ChangeLog:
 install-data-local:
 	$(MKDIR_P) $(DESTDIR)$(kimchidir)
 	$(INSTALL_DATA) API.json $(DESTDIR)$(kimchidir)/API.json
-	mkdir -p $(DESTDIR)/var/lib/kimchi/{debugreports,screenshots,isos}
+	mkdir -p $(DESTDIR)/var/lib/kimchi/{screenshots,isos}
 
 uninstall-local:
 	$(RM) $(DESTDIR)$(kimchidir)/API.json

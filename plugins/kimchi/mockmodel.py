@@ -33,8 +33,6 @@ from wok.xmlutils.utils import xml_item_update
 import config
 import imageinfo
 import osinfo
-from model import cpuinfo
-from model.debugreports import DebugReportsModel
 from model.host import DeviceModel
 from model.libvirtstoragepool import IscsiPoolDef, NetfsPoolDef
 from model.libvirtstoragepool import StoragePoolDef
@@ -73,8 +71,6 @@ class MockModel(Model):
         self._mock_swupdate = MockSoftwareUpdate()
         self._mock_repositories = MockRepositories()
 
-        cpuinfo.get_topo_capabilities = \
-            MockModel.get_topo_capabilities
         libvirt.virConnect.defineXML = MockModel.domainDefineXML
         libvirt.virDomain.XMLDesc = MockModel.domainXMLDesc
         libvirt.virDomain.undefine = MockModel.undefineDomain
@@ -112,7 +108,6 @@ class MockModel(Model):
         StoragePoolModel._update_lvm_disks = self._update_lvm_disks
         StorageVolumesModel.get_list = self._mock_storagevolumes_get_list
         StorageVolumeModel.doUpload = self._mock_storagevolume_doUpload
-        DebugReportsModel._gen_debugreport_file = self._gen_debugreport_file
         LibvirtVMTemplate._get_volume_path = self._get_volume_path
         VMTemplate.get_iso_info = self._probe_image
         imageinfo.probe_image = self._probe_image
@@ -243,22 +238,6 @@ class MockModel(Model):
             return self._mock_storagevolumes.scsi_volumes[vol]['path']
 
         return MockModel._libvirt_get_vol_path(pool, vol)
-
-    def _gen_debugreport_file(self, name):
-        return add_task('/plugins/kimchi/debugreports/%s' % name, self._create_log,
-                        self.objstore, name)
-
-    def _create_log(self, cb, name):
-        path = config.get_debugreports_path()
-        tmpf = os.path.join(path, name + '.tmp')
-        realf = os.path.join(path, name + '.txt')
-        length = random.randint(1000, 10000)
-        with open(tmpf, 'w') as fd:
-            while length:
-                fd.write('I am logged')
-                length = length - 1
-        os.rename(tmpf, realf)
-        cb("OK", True)
 
     def _update_lvm_disks(self, pool_name, disks):
         conn = self.conn.get()

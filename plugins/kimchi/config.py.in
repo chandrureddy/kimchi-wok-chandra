@@ -38,10 +38,6 @@ def get_distros_store():
     return os.path.join(PluginPaths('kimchi').conf_dir, 'distros.d')
 
 
-def get_debugreports_path():
-    return os.path.join(PluginPaths('kimchi').state_dir, 'debugreports')
-
-
 def get_screenshot_path():
     return os.path.join(PluginPaths('kimchi').state_dir, 'screenshots')
 

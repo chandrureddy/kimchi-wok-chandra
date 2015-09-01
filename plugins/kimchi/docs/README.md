@@ -196,13 +196,13 @@ Usage
 
 Connect your browser to https://localhost:8001.  You should see a screen like:
 
-![Wok Login Screen](/docs/kimchi-login.png)
+![Wok Login Screen](docs/kimchi-login.png)
 
 Wok uses PAM to authenticate users so you can log in with the same username
 and password that you would use to log in to the machine itself.  Once logged in
 you will see a screen like:
 
-![Kimchi Guest View](/docs/kimchi-guest.png)
+![Kimchi Guest View](docs/kimchi-guest.png)
 
 This shows you the list of running guests including a live screenshot of
 the guest session.  You can use the action buttons to shutdown the guests
@@ -216,7 +216,7 @@ top navigation bar.
 
 The template screen looks like:
 
-![Kimchi Template View](/docs/kimchi-templates.png)
+![Kimchi Template View](docs/kimchi-templates.png)
 
 From this view, you can change the parameters of a template or create a
 new template using the "+" button in the upper right corner.

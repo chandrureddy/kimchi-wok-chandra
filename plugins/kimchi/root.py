@@ -58,7 +58,6 @@ class KimchiRoot(WokRoot):
 
         make_dirs = [
             os.path.abspath(config.get_distros_store()),
-            os.path.abspath(config.get_debugreports_path()),
             os.path.abspath(config.get_screenshot_path())
         ]
         for directory in make_dirs:

@@ -22,7 +22,6 @@ from cherrypy.lib.reprconf import Parser
 
 from wok.config import Paths
 
-from wok.plugins.kimchi.config import get_debugreports_path
 from wok.plugins.kimchi.config import get_screenshot_path
 from wok.plugins.kimchi.config import KimchiPaths
 
@@ -166,13 +165,6 @@ class ConfigTests(unittest.TestCase):
                 'tools.staticdir.on': True,
                 'tools.staticdir.dir': get_screenshot_path(),
                 'tools.nocache.on': False
-            },
-            '/data/debugreports': {
-                'tools.staticdir.on': True,
-                'tools.staticdir.dir': get_debugreports_path(),
-                'tools.nocache.on': False,
-                'tools.wokauth.on': True,
-                'tools.staticdir.content_types': {'xz': 'application/x-xz'}
             },
             '/favicon.ico': {
                 'tools.staticfile.on': True,
